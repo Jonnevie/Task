@@ -1,0 +1,138 @@
+/* Jonnevie's Section */
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    font-family: 'montserrat';
+}
+
+
+/* title section */
+.titleBars {
+    display: grid;
+    grid-template-areas: "toDo inProgress Done";
+    grid-template-columns: 33% 33% 33%;
+    /* margin: 8%; */
+ 
+}
+
+.toDo {
+    border-bottom: 6px solid #e6585e;
+    grid-area: 'toDo';
+    margin: 15px;
+    
+}
+.toDo h2 {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.inProgress {
+    border-bottom: 6px #efca3c solid;
+    grid-area: 'inProgress';
+    margin: 15px;
+}
+.inProgress h2 {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.done {
+    border-bottom: 6px #8ac927 solid;
+    grid-area: 'done';
+    margin: 15px;
+}
+.done h2 {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+/* Cards section */
+.cardsToDo {
+    display: grid;
+    grid-template-rows: max-content;
+    grid-template-columns: 33% 33% 33%;
+    grid-auto-rows: auto;
+    /* grid-template-areas: "card1 card2 card3"
+                        "card4 card5 card6" */
+    
+}
+
+/* first card */
+.cardsToDo1 {
+    /* border: grey solid 2px; */
+    display: grid;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    grid-template-areas:"cardsTitle"
+                        "cardsDescription"
+                        "edits"
+                        "dueDate";
+
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+}
+
+.cardsTitle {
+    grid-area: 'cardsTitle';
+    padding-top: 20px;
+    padding-left: 15px;
+    font-family: 'montserrat';
+    
+}
+
+.cardsTitle h2 {
+    font-weight: bold;
+    margin: 10px;
+    margin-right: 30px;
+    padding-right: 20px;
+}
+
+.cardsTitle img {
+   float: right;
+   position: relative;
+   bottom: 60px;
+}
+
+.cardsDescription {
+    grid-area: 'cardsDescription';
+
+    padding: 15px 25px;
+}
+
+.edits {
+    grid-area: 'edits';
+    justify-self: end;
+}
+
+.edits img{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-right:20px;
+}
+.dueDate {
+    grid-area: 'dueDate';
+    padding-left: 15px;
+
+}
+
+.dueDate p{
+    font-weight: bold;
+}
+
+.dueDate span {
+    font-weight: lighter;
+}
+
+/* end Jonnevie's Section */
