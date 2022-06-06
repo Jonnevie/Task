@@ -8,7 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Bootstrap JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a4530500ac.js" crossorigin="anonymous"></script>   
     <title>TASK</title>
 </head>
 <body>
@@ -133,6 +138,27 @@
 </div>
 
 <!-- end Cards Section -->
+
+
+<!-- S I D E B A R -->
+
+<!-- Button -->
+<div>
+    <a href="#sidebar" class="btn btn" data-bs-toggle="offcanvas" role="button" area-controls="sidebar"><i class="fa-solid fa-bars"></i></a>
+    
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-start col-3 responsive" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+        <img class="col-5 mt-3 responsive" src="./Resources/logo.png" alt="Task logo">
+        <div class="offcanvas-header responsive">
+            <h3 class="offcanvas-title" id="sidebar-label">Projects</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="close"></button>
+        </div>
+        <div class="offcanvas-body responsive">
+            <p class="responsive">Project Name 1 <img id="colour" class="colour-tags rounded float-end" src="./Resources/yellowbox.png" alt="Colour Tag"></p>
+            <p class="responsive">Project Name 2</p>
+        </div>
+    </div>  
+    
 
 
 
