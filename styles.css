@@ -136,3 +136,17 @@ html {
 }
 
 /* end Jonnevie's Section */
+
+/* S I D E B A R */
+
+#side_nav {
+    background: black;
+    min-width: 250px;
+    max-width: 250px;
+}
+
+.content {
+    min-height: 100rem;
+    width: 100%;
+
+}
