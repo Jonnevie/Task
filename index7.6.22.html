@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Bootstrap JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a4530500ac.js" crossorigin="anonymous"></script>   
+    <title>TASK</title>
+</head>
+<body>
+    
+    <div class="container-fluid">
+        <!-- sidenav -->
+        <div class="row">
+          <div class="col-12 col-md-3 col-lg-3">
+            <div class="row"> 
+                
+                <h2 class="logo">T<span class=greentestlogo>ASK</span></h2></div>
+                <div class="button-wrapper">
+                    <p class="h2"><strong>Projects:</strong></p>
+                    <button type="button" class="newProjectButton btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                    <strong> New Project</strong>
+                  </button>
+                  
+                </div>
+                
+                <div class="row">
+                    
+            </div>
+              
+            <div class="row">
+              <nav class="navbar navbar-light">
+            <ul >
+              <li class="nav-item">
+                <a class="nav-link" href="#"> <img src="./Resources/purplecircle.png">Projects1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><img src="./Resources/bluecircle.png">Projects2</a>
+              </li>
+             
+            </ul>
+            
+          </nav>
+          </div>
+            
+           </div>
+
+
+            <!-- main here -->
+        <div class="col-12 col-md-9 col-lg-9">
+            <div class="row">
+                <div class="col-12">
+                <h3 class="h2 projectheading"> 
+                    <img src="./Resources/purplecircle.png" alt=""><strong>Projects1</strong>
+                </h3>
+                <div class="descriptionwrapper">
+                    <p class="bg-light projectdescriptiontext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sint fuga minima debitis aut. Eum iure consectetur aliquid dolore doloremque, amet, quibusdam minus excepturi libero sint iste inventore optio sem ipsum dolor sit amet consectetur adipisicing elit. Unde sint fuga minima debitis aut. Eum iure consectetur aliquid dolore doloremque, amet, quibusdam minus excepturi libero sint iste inventore optio sequi!</p>
+                <img src="./Resources/ProfileUser1.png" class="mainprofileimage">
+                </div>
+                
+            </div>
+          
+
+           </div> 
+            
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+
+                    <div class="collabwrapper">
+                        <p class="collabtext">Collaborators : <img class="collaborators" src="./Resources/ProfileUesr3.png" alt="">
+                        <img class="collaborators" src="./Resources/ProfileUser1.png" alt="">
+                        <img class="collaborators" src="./Resources/ProfileUser2.png" alt="">
+                </p>
+                    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNewTask">
+        <strong>Add Task</strong></button>
+                        </div>
+                    </div>
+              
+            </div>
+            
+            
+            
+            
+            
+            
+            <!-- cards section, Jonnevie's Bit -->
+<!--  Cards using Bootstrap -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="toDo">
+                <h2>To Do</h2>
+            </div>
+
+  <!-- **** LIST GROUP for : To Do Section! -->
+            <ul class="list-group">
+                <li class="list-group-item p-0 border-0">
+                    <div class="cardsToDo1">
+                        <div class="cardsTitle">
+                            <img src="./Resources/redbox.png" class="redbox">
+                            <h2>Draw a Picture</h2>
+                        </div>
+                        <div class="cardsDescription overflow-hidden">
+                            <p>Lorem isectetur adipisicing elit. Sit laborum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
+                        </div>
+                        <div class="edits">
+                            <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
+                            <img class="edit" src="./Resources/ProfileUser2.png"></h2>
+                        </div>  
+                        <div class="dueDate">
+                            <hr>
+                            <p class="due">Due: <span class="date">15/12/2022</span></p>
+                        </div>
+                </div> 
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="inProgress">
+                <h2>In Progress</h2>
+            </div>
+  <!-- **** LIST GROUP for : In Progress Section! -->
+
+            <ul class="list-group">
+                <li class="list-group-item p-0 border-0">
+                    <div class="cardsToDo1">
+                        <div class="cardsTitle">
+                            <img src="./Resources/yellowbox.png" class="redbox">
+                            <h2>Say Hi to Seb.</h2>
+                        </div>
+                        <div class="cardsDescription">
+                            <p>pen if i added lots of text hpen if i added lots of text hpen if i added lots of text hpen if i added lots of text hpen if i added lots of text hL well what would happen if i added lots of text here?  Would the box expand on its own?  Oh it does? great! laborum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
+                        </div>
+                        <div class="edits">
+                            <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
+                            <img class="edit" src="./Resources/ProfileUesr3.png"></h2>       
+                        </div>  
+                        <div class="dueDate">
+                            <hr>
+                            <p class="due">Due: <span class="date">15/12/2022</span></p>
+                        </div>
+                </div>
+                </li>
+
+                <li class="list-group-item p-0 border-0">
+                    <div class="cardsToDo1">
+                        <div class="cardsTitle">
+                            <img src="./Resources/yellowbox.png" class="yellowbox">
+                            <h2>Have Brekkie</h2>
+                        </div>
+                        <div class="cardsDescription">
+                            <p>have one slice of toast.</p>
+                        </div>
+                        <div class="edits">
+                            <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
+                            <img class="edit" src="./Resources/ProfileUesr3.png"></h2>       
+                        </div>  
+                        <div class="dueDate">
+                            <hr>
+                            <p class="due">Due: <span class="date">15/12/2022</span></p>
+                        </div>
+                    
+                </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="review">
+                <h2>Review</h2>
+            </div>
+
+<!-- **** LIST GROUP for : Review Section! -->
+            
+<ul class="list-group">
+    <li class="list-group-item p-0 border-0">
+<div class="cardsToDo1">
+    <div class="cardsTitle">
+        <img src="./Resources/bluebox.png" class="bluebox">
+        <h2>Titles!</h2>
+    </div>
+    <div class="cardsDescription">
+        <p>Lorem isectetur adipedit tenetur reprehit ipsam cupiditate rem delectus veritatis voluptas!s</p>
+    </div>
+    <div class="edits">
+        <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
+        <img class="edit" src="./Resources/ProfileUser1.png"></h2>
+    </div>  
+    <div class="dueDate">
+        <hr>
+        <p class="due">Due: <span class="date">15/12/2022</span></p>
+    </div>
+</div>
+</li>
+</ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="done">
+                <h2>Done</h2>
+            </div>
+<!-- **** LIST GROUP for : Done Section! -->
+<ul class="list-group">
+    <li class="list-group-item p-0 border-0">          
+<div class="cardsToDo1">
+    <div class="cardsTitle"> 
+        <img src="./Resources/greenbox.png" class="redbox">
+        <h2>Create Logo</h2>
+       
+    </div>
+    <div class="cardsDescription">
+        <p>Create a logo for TASK.</p>
+    </div>
+    <div class="edits">
+        <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
+        <img class="edit" src="./Resources/ProfileUser1.png"></h2>
+    </div>  
+    <div class="dueDate">
+        <hr>
+        <p class="due">Due: <span class="date">15/12/2022</span></p>
+    </div>
+</li>
+<li class="list-group-item p-0 border-0">          
+    <div class="cardsToDo1">
+        <div class="cardsTitle"> 
+            <img src="./Resources/greenbox.png" class="redbox">
+            <h2>Name Group Project</h2>
+        </div>
+        <div class="cardsDescription">
+            <p>Short and Sweet</p>
+        </div>
+        <div class="edits">
+            <img src="./Resources/Editbutton.png" alt="" class="profile"data-toggle="modal" data-target="#editModal">
+            <img class="edit" src="./Resources/ProfileUser1.png"></h2>
+        </div>  
+        <div class="dueDate">
+            <hr>
+            <p class="due">Due: <span class="date">15/12/2022</span></p>
+        </div>
+    </li>  
+
+    <li class="list-group-item p-0 border-0">          
+        <div class="cardsToDo1">
+            <div class="cardsTitle"> 
+                <img src="./Resources/greenbox.png" class="redbox">
+                <h2>Make  Cake</h2>
+            </div>
+            <div class="cardsDescription">
+                <p>Lorem isectetur arum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
+            </div>
+            <div class="edits">
+                <img src="./Resources/Editbutton.png" alt="" class="profile"data-toggle="modal" data-target="#editModal">
+                <img class="edit" src="./Resources/ProfileUser1.png"></h2>
+            </div>  
+            <div class="dueDate">
+                <hr>
+                <p class="due">Due: <span class="date">15/12/2022</span></p>
+            </div>
+        </li>  
+
+        <li class="list-group-item p-0 border-0">          
+            <div class="cardsToDo1">
+                <div class="cardsTitle"> 
+                    <img src="./Resources/greenbox.png" class="redbox">
+                    <h2>Colour the Pig</h2>
+                </div>
+                <div class="cardsDescription">
+                    <p>Lorem isectetur arum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
+                </div>
+                <div class="edits">
+                    <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
+                    <img class="edit" src="./Resources/ProfileUser1.png"></h2>
+                </div>  
+                <div class="dueDate">
+                    <hr>
+                    <p class="due">Due: <span class="date">15/12/2022</span></p>
+                </div>
+            </li>  
+
+<!-- start list item -->
+<li class="list-group-item p-0 border-0">          
+    <div class="cardsToDo1">
+        <div class="cardsTitle"> 
+            <img src="./Resources/greenbox.png" class="redbox">
+            <h2>Title Here</h2>
+        </div>
+        <div class="cardsDescription">
+            <p> Example of a Description Here</p>
+        </div>
+        <div class="edits">
+            <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
+            <img class="edit" src="./Resources/ProfileUser1.png"></h2>
+        </div>  
+        <div class="dueDate">
+            <hr>
+            <p class="due">Due: <span class="date">15/12/2022</span></p>
+        </div>
+    </li>  
+<!-- end list item -->
+
+</ul>
+</div>
+
+
+
+
+<!-- end Cards Section -->
+        </div>
+  ​
+        </div>
+      </div>
+    </div>
+
+
+
+  
+  <!-- ADD NEW TASK -->
+  <div id="addNewProject">
+
+    <!-- Modal Add New Task-->
+    <div class="modal fade" id="addNewTask" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id=""><strong>Add New Task</strong></h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form action="" method="post">
+                                        <!-- Add New Task Form -->
+                                        <label class="control-label requiredField" for="taskName">
+                                            Task Name:
+                                            <span class="x">
+                                            </span>
+                                        </label>
+                                        <input class="form-control" id="taskName" name="taskName"
+                                            placeholder="Task Name" type="text" required />
+                                </div>
+                                <!-- Assign To -->
+                                <div class="form-group ">
+                                    <label class="control-label " for="assignTo">
+                                        Assign To:
+                                    </label>
+                                    <select class="select form-control" id="assignTo" name="assignTo">
+                                        <option value="Member">
+                                            Member
+                                        </option>
+                                        <option value="Betty">
+                                            Betty
+                                        </option>
+                                        <option value="Jonnevie">
+                                            Jonnevie
+                                        </option>
+                                        <option value="Seb">
+                                            Seb
+                                        </option>
+                                    </select>
+                                </div>
+                                <!-- Due Date -->
+                                <div class="form-group ">
+                                    <label class="control-label requiredField" for="dueDate">
+                                        Due Date:
+                                        <span class="asteriskField">
+                                        </span>
+                                    </label>
+                                    <input class="form-control" id="dueDate" name="dueDate" placeholder="MM/DD/YYYY"
+                                        type="date" />
+                                </div>
+                                <!-- Status -->
+                                <div class="form-group ">
+                                    <label class="control-label requiredField" for="taskStatus">
+                                        Status:
+                                        <span class="asteriskField">
+                                        </span>
+                                    </label>
+                                    <select class="select form-control" id="taskStatus" name="taskStatus">
+                                        <option value="To Do">
+                                            To Do
+                                        </option>
+                                        <option value="Pending">
+                                            In Progress
+                                        </option>
+                                        <option value="Complete">
+                                            <span>Review</span>
+                                        </option>
+                                        <option value="Complete">
+                                            <span>Done</span>
+                                        </option>
+                                    </select>
+                                </div>
+                                <!-- Description -->
+                                <div class="form-group ">
+                                    <label class="control-label " for="taskDescription">
+                                        Description:
+                                    </label>
+                                    <textarea class="form-control" cols="40" id="taskDescription"
+                                        name="taskDescription" placeholder="Add a description" rows="10"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <div>
+                                        <input name="_honey" style="display:none" type="text" />
+                                        <br>
+                                        <button class="btn btn-primary float-end" name="submit" type="submit">
+                                            Save
+                                        </button>
+                                    </div>
+                                </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+</div>
+
+
+
+
+
+<!-- Modal for add new project -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><strong>Add New Project</strong></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         <!-- ADD NEW PROJECT -->
+
+<form action="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="" method="post">
+
+                    <!-- Project Name -->
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="projectName">
+                            Project Name:
+                            <span class="x">
+                            </span>
+                        </label>
+                        <input class="form-control" id="taskName" name="taskName" placeholder="Project Name..."
+                            type="text" required />
+                    </div>
+
+                    <!-- Collaborators -->
+
+                    <div class="form-group">
+                        <label class="control-label " for="collaborators">
+                            Collaborators:
+                        </label>
+                        <select class="select form-control" id="collaborators" name="collaborators">
+                            <option value="Member">
+                                Member
+                            </option>
+                            <option value="Betty">
+                                Betty
+                            </option>
+                            <option value="Jonnevie">
+                                Jonnevie
+                            </option>
+                            <option value="Seb">
+                                Seb
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Project Deadline -->
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="projectDeadline">
+                            Project Deadline:
+                            <span class="asteriskField">
+                            </span>
+                        </label>
+                        <input class="form-control" id="projectDeadline" name="projectDeadline" placeholder="MM/DD/YYYY"
+                            type="date" />
+                    </div>
+                    
+                    <!--  Description  -->
+
+                    <div class="form-group ">
+                        <label class="control-label " for="taskDescription">
+                            Description:
+                        </label>
+                        <textarea class="form-control" cols="40" id="taskDescription" name="taskDescription"
+                            placeholder="Add a description" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <input name="_honey" style="display:none" type="text" />
+                            <br>
+                           
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<!-- S I D E B A R -->
+
+<!-- Button -->
+<div>
+    <a href="#sidebar" class="btn btn" data-bs-toggle="offcanvas" role="button" area-controls="sidebar"><i class="fa-solid fa-bars"></i></a>
+    
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-start col-3 responsive" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+        <img class="col-5 mt-3 responsive" src="./Resources/logo.png" alt="Task logo">
+        <div class="offcanvas-header responsive">
+            <h3 class="offcanvas-title" id="sidebar-label">Projects</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="close"></button>
+        </div>
+        <div class="offcanvas-body responsive">
+            <p class="responsive">Project Name 1 <img id="colour" class="colour-tags rounded float-end" src="./Resources/yellowbox.png" alt="Colour Tag"></p>
+            <p class="responsive">Project Name 2</p>
+        </div>
+    </div>  
+    
+
+
+
+<!-- start Forms Section -->
+
+
+
+
+
+
+<!-- edit modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><strong>Edit Existing Task</strong></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+<form action="">        
+    <div class="container"> 
+                 
+        <div class="row">
+            <div class="col-md-12">
+                <form action="" method="post">
+
+                    <!-- Task Name -->
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="taskName">
+                            Task Name:
+                            <span class="x">                               
+                            </span>
+                        </label>
+                        <input class="form-control" id="taskName" name="taskName" placeholder="Task Name" type="text" required/>
+                    </div>
+
+                    <!-- Assign To -->
+
+                    <div class="form-group ">
+                        <label class="control-label " for="assignTo">
+                            Assign To:
+                        </label>
+                        <select class="select form-control" id="assignTo" name="assignTo">
+                            <option value="Member">
+                                Member
+                            </option>
+                            <option value="Betty">
+                                Betty
+                            </option>
+                            <option value="Jonnevie">
+                                Jonnevie
+                            </option>
+                            <option value="Seb">
+                                Seb
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Due Date -->
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="dueDate">
+                            Due Date:
+                            <span class="asteriskField">
+                            </span>
+                        </label>
+                        <input class="form-control" id="dueDate" name="dueDate" placeholder="MM/DD/YYYY"
+                            type="date" />
+                    </div>
+
+                    <!-- Status -->
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="taskStatus">
+                            Status:
+                            <span class="asteriskField">
+                            </span>
+                        </label>
+                        <select class="select form-control" id="taskStatus" name="taskStatus">
+                            <option value="To Do">
+                                To Do
+                            </option>
+                            <option value="Pending">
+                                Pending
+                            </option>
+                            <option value="Complete">
+                                <span>Complete</span>
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Description -->
+
+                    <div class="form-group ">
+                        <label class="control-label " for="taskDescription">
+                            Description:
+                        </label>
+                        <textarea class="form-control" cols="40" id="taskDescription" name="taskDescription"
+                            placeholder="Edit description" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <input name="_honey" style="display:none" type="text" />
+                            <br>
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- EDIT TASK FORM -->
+
+
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<!-- Bootstrap JavaScript Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous">
+</script>
+
+</body>
+</html>
