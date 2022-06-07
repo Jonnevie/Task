@@ -15,7 +15,7 @@ html {
 /* Main navigation */
 .logo {
     font-family: 'geo';
-    font-size: 5rem;
+    font-size: 6rem;
     text-align: center;
 }
 
@@ -38,20 +38,22 @@ html {
     color: #8ac927;
 }
 .projectdescriptiontext {
-    margin-left: 50px;
+    margin: 50px;
 }
 
 .mainprofileimage {
     border-radius: 50%;
     height: 100px;
-    margin-top: 80px;
+
 
 
 }
 .projectheading img{
     padding-right: 20px;
+
 }
 .h2 {
+    margin-left: 20px;
     font-family: 'montserrat';
 }
 
@@ -68,6 +70,26 @@ html {
 .collabtext {
     padding-left: 50px;
 
+}
+.collabwrapper {
+    padding: 30px;
+    display: flex;
+    justify-content:space-between;
+}
+
+.descriptionwrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    height: min-content;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* title section */
@@ -116,36 +138,44 @@ html {
     margin-right: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
+  
 
 }
 
 .cardsTitle {
     grid-area: 'cardsTitle';
-    padding-top: 20px;
+    padding-top: 15px;
     padding-left: 15px;
     font-family: 'montserrat';
+
     
 }
 
 .cardsTitle h2 {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin: 10px;
+
+
 }
 
 .cardsTitle img {
    float: right;
    position: relative;
+
 }
 
 .cardsDescription {
     grid-area: 'cardsDescription';
-    padding: 15px 25px;
+    padding: 15px 15px;
+
 }
 
 .edits {
     grid-area: 'edits';
     justify-self: end;
+    cursor: pointer;
+ 
 }
 
 .edits img{
@@ -153,18 +183,22 @@ html {
     width: 40px;
     border-radius: 50%;
     margin-right:20px;
+  
 }
 .dueDate {
     grid-area: 'dueDate';
     padding-left: 15px;
+    
 }
 
 .dueDate p{
     font-weight: bold;
+   
 }
 
 .dueDate span {
     font-weight: lighter;
+
 }
 
 /* end Jonnevie's Section */

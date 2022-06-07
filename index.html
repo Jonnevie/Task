@@ -25,10 +25,20 @@
         <div class="row">
           <div class="col-12 col-md-3 col-lg-3">
             <div class="row"> 
+                
                 <h2 class="logo">T<span class=greentestlogo>ASK</span></h2></div>
-            <div class="row">
-                <p class="h2"><strong>Projects:</strong></p></div>
-           
+                <div class="button-wrapper">
+                    <p class="h2"><strong>Projects:</strong></p>
+                    <button type="button" class="newProjectButton btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                    <strong> New Project</strong>
+                  </button>
+                  
+                </div>
+                
+                <div class="row">
+                    
+            </div>
+              
             <div class="row">
               <nav class="navbar navbar-light">
             <ul >
@@ -36,7 +46,7 @@
                 <a class="nav-link" href="#"> <img src="./Resources/purplecircle.png">Projects1</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><img src="./Resources/purplecircle.png">Projects2</a>
+                <a class="nav-link" href="#"><img src="./Resources/bluecircle.png">Projects2</a>
               </li>
              
             </ul>
@@ -50,31 +60,34 @@
             <!-- main here -->
         <div class="col-12 col-md-9 col-lg-9">
             <div class="row">
-                <div class="col-10">
+                <div class="col-12">
                 <h3 class="h2 projectheading"> 
                     <img src="./Resources/purplecircle.png" alt=""><strong>Projects1</strong>
                 </h3>
-                <p class="bg-light projectdescriptiontext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sint fuga minima debitis aut. Eum iure consectetur aliquid dolore doloremque, amet, quibusdam minus excepturi libero sint iste inventore optio sem ipsum dolor sit amet consectetur adipisicing elit. Unde sint fuga minima debitis aut. Eum iure consectetur aliquid dolore doloremque, amet, quibusdam minus excepturi libero sint iste inventore optio sequi!</p>
-               </div>
-            <div class="col-2 ">
+                <div class="descriptionwrapper">
+                    <p class="bg-light projectdescriptiontext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde sint fuga minima debitis aut. Eum iure consectetur aliquid dolore doloremque, amet, quibusdam minus excepturi libero sint iste inventore optio sem ipsum dolor sit amet consectetur adipisicing elit. Unde sint fuga minima debitis aut. Eum iure consectetur aliquid dolore doloremque, amet, quibusdam minus excepturi libero sint iste inventore optio sequi!</p>
                 <img src="./Resources/ProfileUser1.png" class="mainprofileimage">
                 </div>
+                
+            </div>
+          
 
            </div> 
             
             <div class="row">
-                <div class="col-9 col-md-9 col-lg-10">
-                    <p class="collabtext">Collaborators : <img class="collaborators" src="./Resources/ProfileUesr3.png" alt="">
+                <div class="col-12 col-md-12 col-lg-12">
+
+                    <div class="collabwrapper">
+                        <p class="collabtext">Collaborators : <img class="collaborators" src="./Resources/ProfileUesr3.png" alt="">
                         <img class="collaborators" src="./Resources/ProfileUser1.png" alt="">
                         <img class="collaborators" src="./Resources/ProfileUser2.png" alt="">
                 </p>
-                        </div>
-                <div class="col-3 col-md-3 col-lg-2">
                     <!-- Button trigger modal -->
-    <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addNewTask">
         <strong>Add Task</strong></button>
-                </div>
+                        </div>
+                    </div>
+              
             </div>
             
             
@@ -100,11 +113,11 @@
                             <img src="./Resources/redbox.png" class="redbox">
                             <h2>Draw a Picture</h2>
                         </div>
-                        <div class="cardsDescription">
+                        <div class="cardsDescription overflow-hidden">
                             <p>Lorem isectetur adipisicing elit. Sit laborum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
                         </div>
                         <div class="edits">
-                            <img src="./Resources/Editbutton.png" alt="" class="profile">
+                            <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
                             <img class="edit" src="./Resources/ProfileUser2.png"></h2>
                         </div>  
                         <div class="dueDate">
@@ -134,7 +147,7 @@
                             <p>pen if i added lots of text hpen if i added lots of text hpen if i added lots of text hpen if i added lots of text hpen if i added lots of text hL well what would happen if i added lots of text here?  Would the box expand on its own?  Oh it does? great! laborum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
                         </div>
                         <div class="edits">
-                            <img src="./Resources/Editbutton.png" alt="" class="profile">
+                            <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
                             <img class="edit" src="./Resources/ProfileUesr3.png"></h2>       
                         </div>  
                         <div class="dueDate">
@@ -154,7 +167,7 @@
                             <p>have one slice of toast.</p>
                         </div>
                         <div class="edits">
-                            <img src="./Resources/Editbutton.png" alt="" class="profile">
+                            <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
                             <img class="edit" src="./Resources/ProfileUesr3.png"></h2>       
                         </div>  
                         <div class="dueDate">
@@ -182,10 +195,10 @@
         <h2>Titles!</h2>
     </div>
     <div class="cardsDescription">
-        <p>Lorem isectetur adipisicingpedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
+        <p>Lorem isectetur adipedit tenetur reprehit ipsam cupiditate rem delectus veritatis voluptas!s</p>
     </div>
     <div class="edits">
-        <img src="./Resources/Editbutton.png" alt="" class="profile">
+        <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
         <img class="edit" src="./Resources/ProfileUser1.png"></h2>
     </div>  
     <div class="dueDate">
@@ -214,7 +227,7 @@
         <p>Create a logo for TASK.</p>
     </div>
     <div class="edits">
-        <img src="./Resources/Editbutton.png" alt="" class="profile">
+        <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
         <img class="edit" src="./Resources/ProfileUser1.png"></h2>
     </div>  
     <div class="dueDate">
@@ -232,7 +245,7 @@
             <p>Short and Sweet</p>
         </div>
         <div class="edits">
-            <img src="./Resources/Editbutton.png" alt="" class="profile">
+            <img src="./Resources/Editbutton.png" alt="" class="profile"data-toggle="modal" data-target="#editModal">
             <img class="edit" src="./Resources/ProfileUser1.png"></h2>
         </div>  
         <div class="dueDate">
@@ -245,13 +258,13 @@
         <div class="cardsToDo1">
             <div class="cardsTitle"> 
                 <img src="./Resources/greenbox.png" class="redbox">
-                <h2>Make Chocolate Cake</h2>
+                <h2>Make  Cake</h2>
             </div>
             <div class="cardsDescription">
                 <p>Lorem isectetur arum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
             </div>
             <div class="edits">
-                <img src="./Resources/Editbutton.png" alt="" class="profile">
+                <img src="./Resources/Editbutton.png" alt="" class="profile"data-toggle="modal" data-target="#editModal">
                 <img class="edit" src="./Resources/ProfileUser1.png"></h2>
             </div>  
             <div class="dueDate">
@@ -270,7 +283,7 @@
                     <p>Lorem isectetur arum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
                 </div>
                 <div class="edits">
-                    <img src="./Resources/Editbutton.png" alt="" class="profile">
+                    <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
                     <img class="edit" src="./Resources/ProfileUser1.png"></h2>
                 </div>  
                 <div class="dueDate">
@@ -290,7 +303,7 @@
             <p> Example of a Description Here</p>
         </div>
         <div class="edits">
-            <img src="./Resources/Editbutton.png" alt="" class="profile">
+            <img src="./Resources/Editbutton.png" alt="" class="profile" data-toggle="modal" data-target="#editModal">
             <img class="edit" src="./Resources/ProfileUser1.png"></h2>
         </div>  
         <div class="dueDate">
@@ -324,7 +337,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="">Add New Task</h3>
+                    <h3 class="modal-title" id=""><strong>Add New Task</strong></h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -422,38 +435,27 @@
 </div>
 </div>
 
-<!-- S I D E B A R -->
 
-<!-- Button -->
-<div>
-    <a href="#sidebar" class="btn btn" data-bs-toggle="offcanvas" role="button" area-controls="sidebar"><i class="fa-solid fa-bars"></i></a>
-    
-    <!-- Offcanvas -->
-    <div class="offcanvas offcanvas-start col-3 responsive" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
-        <img class="col-5 mt-3 responsive" src="./Resources/logo.png" alt="Task logo">
-        <div class="offcanvas-header responsive">
-            <h3 class="offcanvas-title" id="sidebar-label">Projects</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="close"></button>
+
+
+
+<!-- Modal for add new project -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><strong>Add New Project</strong></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <div class="offcanvas-body responsive">
-            <p class="responsive">Project Name 1 <img id="colour" class="colour-tags rounded float-end" src="./Resources/yellowbox.png" alt="Colour Tag"></p>
-            <p class="responsive">Project Name 2</p>
-        </div>
-    </div>  
-    
-
-
-
-<!-- start Forms Section -->
-
-
-<!-- ADD NEW PROJECT -->
+        <div class="modal-body">
+         <!-- ADD NEW PROJECT -->
 
 <form action="">
     <div class="container">
-        <h3>Add New Project</h3>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <form action="" method="post">
 
                     <!-- Project Name -->
@@ -515,9 +517,7 @@
                         <div>
                             <input name="_honey" style="display:none" type="text" />
                             <br>
-                            <button class="btn btn-primary " name="submit" type="submit">
-                                Submit
-                            </button>
+                           
                         </div>
                     </div>
                 </form>
@@ -525,113 +525,68 @@
         </div>
     </div>
 </form>
-
-
-<!-- ADD NEW TASK FORM-->
-
-<form action="">
-    <div class="container">
-        <h3>Add New Task</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <form action="" method="post">
-
-                    <!-- Add New Task -->
-                    
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="taskName">
-                            Task Name:
-                            <span class="x">
-                            </span>
-                        </label>
-                        <input class="form-control" id="taskName" name="taskName" placeholder="Task Name"
-                            type="text" required />
-                    </div>
-
-                    <!-- Assign To -->
-
-                    <div class="form-group ">
-                        <label class="control-label " for="assignTo">
-                            Assign To:
-                        </label>
-                        <select class="select form-control" id="assignTo" name="assignTo">
-                            <option value="Member">
-                                Member
-                            </option>
-                            <option value="Betty">
-                                Betty
-                            </option>
-                            <option value="Jonnevie">
-                                Jonnevie
-                            </option>
-                            <option value="Seb">
-                                Seb
-                            </option>
-                        </select>
-                    </div>
-
-                    <!-- Due Date -->
-
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="dueDate">
-                            Due Date:
-                            <span class="asteriskField">
-                            </span>
-                        </label>
-                        <input class="form-control" id="dueDate" name="dueDate" placeholder="MM/DD/YYYY"
-                            type="date" />
-                    </div>
-                    <div class="form-group ">
-                        <label class="control-label requiredField" for="taskStatus">
-                            Status:
-                            <span class="asteriskField">
-                            </span>
-                        </label>
-                        <select class="select form-control" id="taskStatus" name="taskStatus">
-                            <option value="To Do">
-                                To Do
-                            </option>
-                            <option value="Pending">
-                                Pending
-                            </option>
-                            <option value="Complete">
-                                <span>Complete</span>
-                            </option>
-                        </select>
-                    </div>
-
-                    <!-- Description -->
-
-                    <div class="form-group ">
-                        <label class="control-label " for="taskDescription">
-                            Description:
-                        </label>
-                        <textarea class="form-control" cols="40" id="taskDescription" name="taskDescription"
-                            placeholder="Add a description" rows="10"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <input name="_honey" style="display:none" type="text" />
-                            <br>
-                            <button class="btn btn-primary " name="submit" type="submit">
-                                Submit
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
     </div>
-</form>
+  </div>
 
 
-<!-- EDIT TASK FORM -->
 
+
+
+
+<!-- S I D E B A R -->
+
+<!-- Button -->
+<div>
+    <a href="#sidebar" class="btn btn" data-bs-toggle="offcanvas" role="button" area-controls="sidebar"><i class="fa-solid fa-bars"></i></a>
+    
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-start col-3 responsive" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+        <img class="col-5 mt-3 responsive" src="./Resources/logo.png" alt="Task logo">
+        <div class="offcanvas-header responsive">
+            <h3 class="offcanvas-title" id="sidebar-label">Projects</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="close"></button>
+        </div>
+        <div class="offcanvas-body responsive">
+            <p class="responsive">Project Name 1 <img id="colour" class="colour-tags rounded float-end" src="./Resources/yellowbox.png" alt="Colour Tag"></p>
+            <p class="responsive">Project Name 2</p>
+        </div>
+    </div>  
+    
+
+
+
+<!-- start Forms Section -->
+
+
+
+
+
+
+<!-- edit modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><strong>Edit Existing Task</strong></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
 <form action="">        
     <div class="container"> 
-        <h3>Edit Existing Task</h3>               
+                 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <form action="" method="post">
 
                     <!-- Task Name -->
@@ -713,9 +668,7 @@
                         <div>
                             <input name="_honey" style="display:none" type="text" />
                             <br>
-                            <button class="btn btn-primary " name="save" type="submit">
-                                Save
-                            </button>
+                            
                         </div>
                     </div>
                 </form>
@@ -723,6 +676,17 @@
         </div>
     </div>
 </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- EDIT TASK FORM -->
+
 
 
 
