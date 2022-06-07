@@ -12,6 +12,63 @@ html {
     font-family: 'montserrat';
 }
 
+/* Main navigation */
+.logo {
+    font-family: 'geo';
+    font-size: 5rem;
+    text-align: center;
+}
+
+.nav-item {
+    list-style-type: none;
+}
+
+.nav-item img{
+    padding-right: 20px;    
+}
+.nav-item a{
+    padding-left: 20px;
+    text-decoration: none;
+    font-family: 'montserrat';
+    font-size: 1.5rem;
+    padding: 20px;
+
+}
+.greentestlogo {
+    color: #8ac927;
+}
+.projectdescriptiontext {
+    margin-left: 50px;
+}
+
+.mainprofileimage {
+    border-radius: 50%;
+    height: 100px;
+    margin-top: 80px;
+
+
+}
+.projectheading img{
+    padding-right: 20px;
+}
+.h2 {
+    font-family: 'montserrat';
+}
+
+ h3{
+    padding: 20px;
+    color: #4f82c4;
+}
+.collaborators {
+    border-radius: 50%;
+    height: 40px;
+    box-sizing: content-box;
+    padding: 10px;
+}
+.collabtext {
+    padding-left: 50px;
+
+}
 
 /* title section */
 
