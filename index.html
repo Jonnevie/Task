@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Bootstrap JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a4530500ac.js" crossorigin="anonymous"></script>   
     <title>TASK</title>
 </head>
 <body>
@@ -18,66 +23,91 @@
 <!-- cards section, Jonnevie's Bit -->
 
 
-<!-- title row up top  -->
-<div class="titleBars">
-    <div class="toDo">
-        <h2>To Do</h2>
-    </div>
-    <div class="inProgress">
-        <h2>In Progress</h2>
-    </div>
-    <div class="done">
-        <h2>Done</h2>
-    </div>
-</div>
 
+<!--  Cards using Bootstrap -->
 
-<!-- actual cards -->
-<div class="cardsToDo">
-    <!-- card #1 -->
-    <div class="cardsToDo1">
-            <div class="cardsTitle">
-                <h2>Draw a Picture</h2>
-                <img src="./Resources/redbox.png" class="redbox">
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="toDo">
+
+                <!-- **** To Do Section! -->
+
+                <h2>To Do</h2>
             </div>
-            <div class="cardsDescription">
-                <p>Lorem isectetur adipisicing elit. Sit laborum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
-            </div>
-            <div class="edits">
-                <img src="./Resources/Editbutton.png" alt="" class="profile">
-                <img class="edit" src="./Resources/ProfileUser2.png"></h2>
-            </div>  
-            <div class="dueDate">
-                <hr>
-                <p class="due">Due: <span class="date">15/12/2022</span></p>
-            </div>
-
-    </div>
-
-     <!-- card #2 -->
-    <div class="cardsToDo1">
-        <div class="cardsTitle">
-            <h2>Say Hi to Seb.</h2>
-            <img src="./Resources/yellowbox.png" class="redbox">
+            <div class="cardsToDo1">
+                <div class="cardsTitle">
+                    <h2>Draw a Picture</h2>
+                    <img src="./Resources/redbox.png" class="redbox">
+                </div>
+                <div class="cardsDescription">
+                    <p>Lorem isectetur adipisicing elit. Sit laborum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
+                </div>
+                <div class="edits">
+                    <img src="./Resources/Editbutton.png" alt="" class="profile">
+                    <img class="edit" src="./Resources/ProfileUser2.png"></h2>
+                </div>  
+                <div class="dueDate">
+                    <hr>
+                    <p class="due">Due: <span class="date">15/12/2022</span></p>
+                </div>
         </div>
-        <div class="cardsDescription">
-            <p>pen if i added lots of text hpen if i added lots of text hpen if i added lots of text hpen if i added lots of text hpen if i added lots of text hL well what would happen if i added lots of text here?  Would the box expand on its own?  Oh it does? great! laborum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
-        </div>
-        <div class="edits">
-            <img src="./Resources/Editbutton.png" alt="" class="profile">
-            <img class="edit" src="./Resources/ProfileUesr3.png"></h2>       
-        </div>  
-        <div class="dueDate">
-            <hr>
-            <p class="due">Due: <span class="date">15/12/2022</span></p>
         </div>
 
-</div>
- <!-- card #3 -->
-<div class="cardsToDo1">
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="inProgress">
+                <!-- **** In Progress Section! -->
+                <h2>In Progress</h2>
+            </div>
+            <div class="cardsToDo1">
+                <div class="cardsTitle">
+                    <h2>Say Hi to Seb.</h2>
+                    <img src="./Resources/yellowbox.png" class="redbox">
+                </div>
+                <div class="cardsDescription">
+                    <p>pen if i added lots of text hpen if i added lots of text hpen if i added lots of text hpen if i added lots of text hpen if i added lots of text hL well what would happen if i added lots of text here?  Would the box expand on its own?  Oh it does? great! laborum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
+                </div>
+                <div class="edits">
+                    <img src="./Resources/Editbutton.png" alt="" class="profile">
+                    <img class="edit" src="./Resources/ProfileUesr3.png"></h2>       
+                </div>  
+                <div class="dueDate">
+                    <hr>
+                    <p class="due">Due: <span class="date">15/12/2022</span></p>
+                </div>
+        </div>
+
+        <div class="cardsToDo1">
+                <div class="cardsTitle">
+                    <h2>Have Brekkie</h2>
+                    <img src="./Resources/yellowbox.png" class="redbox">
+                </div>
+                <div class="cardsDescription">
+                    <p>have one slice of toast.</p>
+                </div>
+                <div class="edits">
+                    <img src="./Resources/Editbutton.png" alt="" class="profile">
+                    <img class="edit" src="./Resources/ProfileUesr3.png"></h2>       
+                </div>  
+                <div class="dueDate">
+                    <hr>
+                    <p class="due">Due: <span class="date">15/12/2022</span></p>
+                </div>
+            
+        </div>
+        </div>
+
+
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="review">
+                  <!-- **** Review Section! -->
+                <h2>Review</h2>
+            </div>
+            <div class="cardsToDo1">
     <div class="cardsTitle">
         <h2>Titles!</h2>
-        <img src="./Resources/greenbox.png" class="redbox">
+        <img src="./Resources/bluebox.png" class="redbox">
     </div>
     <div class="cardsDescription">
         <p>Lorem isectetur adipisicing elit. Sit laborum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
@@ -91,31 +121,17 @@
         <p class="due">Due: <span class="date">15/12/2022</span></p>
     </div>
 </div>
+        </div>
 
- <!-- card #4 -->
-<div class="cardsToDo1">
-    <div class="cardsTitle">
-        <h2>Title Here</h2>
-        <img src="./Resources/redbox.png" class="redbox">
-    </div>
-    <div class="cardsDescription">
-        <p>Lorem isectetur adipisicr reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
-    </div>
-    <div class="edits">
-        <img src="./Resources/Editbutton.png" alt="" class="profile">
-        <img class="edit" src="./Resources/ProfileUser1.png"></h2>
-    </div>  
-    <div class="dueDate">
-        <hr>
-        <p class="due">Due: <span class="date">15/12/2022</span></p>
-    </div>
-</div>
-
- <!-- card #5 -->
-<div class="cardsToDo1">
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="done">
+                  <!-- **** Done Section! -->
+                <h2>Done</h2>
+            </div>
+          <div class="cardsToDo1">
     <div class="cardsTitle">
         <h2>Lunch with Betty!</h2>
-        <img src="./Resources/yellowbox.png" class="redbox">
+        <img src="./Resources/greenbox.png" class="redbox">
     </div>
     <div class="cardsDescription">
         <p>Lorem isectetur arum itaque impedit tenetur reprehenderit ipsam cupiditate rem delectus veritatis voluptas!s</p>
@@ -130,9 +146,339 @@
     </div>
 
 </div>
+
+<div class="cardsToDo1">
+    <div class="cardsTitle">
+        <h2>Finish Card</h2>
+        <img src="./Resources/greenbox.png" class="greenbox">
+    </div>
+    <div class="cardsDescription">
+        <p>LorWell yea just finish it.  Green flag! woo hoooo psam cupiditate rem delectus veritatis voluptas!s</p>
+    </div>
+    <div class="edits">
+        <img src="./Resources/Editbutton.png" alt="" class="profile">
+        <img class="edit" src="./Resources/ProfileUser1.png"></h2>
+    </div>  
+    <div class="dueDate">
+        <hr>
+        <p class="due">Due: <span class="date">15/12/2022</span></p>
+    </div>
+
+</div>
+</div>
+        </div>
+    </div>
+    
 </div>
 
+
 <!-- end Cards Section -->
+
+
+<!-- S I D E B A R -->
+
+<!-- Button -->
+<div>
+    <a href="#sidebar" class="btn btn" data-bs-toggle="offcanvas" role="button" area-controls="sidebar"><i class="fa-solid fa-bars"></i></a>
+    
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-start col-3 responsive" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+        <img class="col-5 mt-3 responsive" src="./Resources/logo.png" alt="Task logo">
+        <div class="offcanvas-header responsive">
+            <h3 class="offcanvas-title" id="sidebar-label">Projects</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="close"></button>
+        </div>
+        <div class="offcanvas-body responsive">
+            <p class="responsive">Project Name 1 <img id="colour" class="colour-tags rounded float-end" src="./Resources/yellowbox.png" alt="Colour Tag"></p>
+            <p class="responsive">Project Name 2</p>
+        </div>
+    </div>  
+    
+
+
+
+<!-- start Forms Section -->
+
+
+<!-- ADD NEW PROJECT -->
+
+<form action="">
+    <div class="container">
+        <h3>Add New Project</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <form action="" method="post">
+
+                    <!-- Project Name -->
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="projectName">
+                            Project Name:
+                            <span class="x">
+                            </span>
+                        </label>
+                        <input class="form-control" id="taskName" name="taskName" placeholder="Project Name..."
+                            type="text" required />
+                    </div>
+
+                    <!-- Collaborators -->
+
+                    <div class="form-group">
+                        <label class="control-label " for="collaborators">
+                            Collaborators:
+                        </label>
+                        <select class="select form-control" id="collaborators" name="collaborators">
+                            <option value="Member">
+                                Member
+                            </option>
+                            <option value="Betty">
+                                Betty
+                            </option>
+                            <option value="Jonnevie">
+                                Jonnevie
+                            </option>
+                            <option value="Seb">
+                                Seb
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Project Deadline -->
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="projectDeadline">
+                            Project Deadline:
+                            <span class="asteriskField">
+                            </span>
+                        </label>
+                        <input class="form-control" id="projectDeadline" name="projectDeadline" placeholder="MM/DD/YYYY"
+                            type="date" />
+                    </div>
+                    
+                    <!--  Description  -->
+
+                    <div class="form-group ">
+                        <label class="control-label " for="taskDescription">
+                            Description:
+                        </label>
+                        <textarea class="form-control" cols="40" id="taskDescription" name="taskDescription"
+                            placeholder="Add a description" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <input name="_honey" style="display:none" type="text" />
+                            <br>
+                            <button class="btn btn-primary " name="submit" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<!-- ADD NEW TASK FORM-->
+
+<form action="">
+    <div class="container">
+        <h3>Add New Task</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <form action="" method="post">
+
+                    <!-- Add New Task -->
+                    
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="taskName">
+                            Task Name:
+                            <span class="x">
+                            </span>
+                        </label>
+                        <input class="form-control" id="taskName" name="taskName" placeholder="Task Name"
+                            type="text" required />
+                    </div>
+
+                    <!-- Assign To -->
+
+                    <div class="form-group ">
+                        <label class="control-label " for="assignTo">
+                            Assign To:
+                        </label>
+                        <select class="select form-control" id="assignTo" name="assignTo">
+                            <option value="Member">
+                                Member
+                            </option>
+                            <option value="Betty">
+                                Betty
+                            </option>
+                            <option value="Jonnevie">
+                                Jonnevie
+                            </option>
+                            <option value="Seb">
+                                Seb
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Due Date -->
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="dueDate">
+                            Due Date:
+                            <span class="asteriskField">
+                            </span>
+                        </label>
+                        <input class="form-control" id="dueDate" name="dueDate" placeholder="MM/DD/YYYY"
+                            type="date" />
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="taskStatus">
+                            Status:
+                            <span class="asteriskField">
+                            </span>
+                        </label>
+                        <select class="select form-control" id="taskStatus" name="taskStatus">
+                            <option value="To Do">
+                                To Do
+                            </option>
+                            <option value="Pending">
+                                Pending
+                            </option>
+                            <option value="Complete">
+                                <span>Complete</span>
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Description -->
+
+                    <div class="form-group ">
+                        <label class="control-label " for="taskDescription">
+                            Description:
+                        </label>
+                        <textarea class="form-control" cols="40" id="taskDescription" name="taskDescription"
+                            placeholder="Add a description" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <input name="_honey" style="display:none" type="text" />
+                            <br>
+                            <button class="btn btn-primary " name="submit" type="submit">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<!-- EDIT TASK FORM -->
+
+<form action="">        
+    <div class="container"> 
+        <h3>Edit Existing Task</h3>               
+        <div class="row">
+            <div class="col-md-6">
+                <form action="" method="post">
+
+                    <!-- Task Name -->
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="taskName">
+                            Task Name:
+                            <span class="x">                               
+                            </span>
+                        </label>
+                        <input class="form-control" id="taskName" name="taskName" placeholder="Task Name" type="text" required/>
+                    </div>
+
+                    <!-- Assign To -->
+
+                    <div class="form-group ">
+                        <label class="control-label " for="assignTo">
+                            Assign To:
+                        </label>
+                        <select class="select form-control" id="assignTo" name="assignTo">
+                            <option value="Member">
+                                Member
+                            </option>
+                            <option value="Betty">
+                                Betty
+                            </option>
+                            <option value="Jonnevie">
+                                Jonnevie
+                            </option>
+                            <option value="Seb">
+                                Seb
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Due Date -->
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="dueDate">
+                            Due Date:
+                            <span class="asteriskField">
+                            </span>
+                        </label>
+                        <input class="form-control" id="dueDate" name="dueDate" placeholder="MM/DD/YYYY"
+                            type="date" />
+                    </div>
+
+                    <!-- Status -->
+
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="taskStatus">
+                            Status:
+                            <span class="asteriskField">
+                            </span>
+                        </label>
+                        <select class="select form-control" id="taskStatus" name="taskStatus">
+                            <option value="To Do">
+                                To Do
+                            </option>
+                            <option value="Pending">
+                                Pending
+                            </option>
+                            <option value="Complete">
+                                <span>Complete</span>
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Description -->
+
+                    <div class="form-group ">
+                        <label class="control-label " for="taskDescription">
+                            Description:
+                        </label>
+                        <textarea class="form-control" cols="40" id="taskDescription" name="taskDescription"
+                            placeholder="Edit description" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div>
+                            <input name="_honey" style="display:none" type="text" />
+                            <br>
+                            <button class="btn btn-primary " name="save" type="submit">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
 
 
 </body>

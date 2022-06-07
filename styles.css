@@ -14,13 +14,7 @@ html {
 
 
 /* title section */
-.titleBars {
-    display: grid;
-    grid-template-areas: "toDo inProgress Done";
-    grid-template-columns: 33% 33% 33%;
-    /* margin: 8%; */
- 
-}
+
 
 .toDo {
     border-bottom: 6px solid #e6585e;
@@ -28,7 +22,7 @@ html {
     margin: 15px;
     
 }
-.toDo h2 {
+.toDo h2, .inProgress h2, .review h2, .done h2 {
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -38,9 +32,11 @@ html {
     grid-area: 'inProgress';
     margin: 15px;
 }
-.inProgress h2 {
-    font-weight: bold;
-    font-size: 1.2rem;
+
+.review {
+    border-bottom: 6px #4f82c4 solid;
+    grid-area: 'review';
+    margin: 15px;
 }
 
 .done {
@@ -48,26 +44,13 @@ html {
     grid-area: 'done';
     margin: 15px;
 }
-.done h2 {
-    font-weight: bold;
-    font-size: 1.2rem;
-}
 
 
 /* Cards section */
-.cardsToDo {
-    display: grid;
-    grid-template-rows: max-content;
-    grid-template-columns: 33% 33% 33%;
-    grid-auto-rows: auto;
-    /* grid-template-areas: "card1 card2 card3"
-                        "card4 card5 card6" */
-    
-}
 
-/* first card */
+
 .cardsToDo1 {
-    /* border: grey solid 2px; */
+
     display: grid;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     grid-template-areas:"cardsTitle"
@@ -94,14 +77,14 @@ html {
 .cardsTitle h2 {
     font-weight: bold;
     margin: 10px;
-    margin-right: 30px;
-    padding-right: 20px;
+    /* margin-right: 30px; */
+    /* padding-right: 20px; */
 }
 
 .cardsTitle img {
    float: right;
    position: relative;
-   bottom: 60px;
+   /* bottom: 80px; */
 }
 
 .cardsDescription {
@@ -136,3 +119,17 @@ html {
 }
 
 /* end Jonnevie's Section */
+
+/* S I D E B A R */
+
+#side_nav {
+    background: black;
+    min-width: 250px;
+    max-width: 250px;
+}
+
+.content {
+    min-height: 100rem;
+    width: 100%;
+
+}
