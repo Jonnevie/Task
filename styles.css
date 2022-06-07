@@ -8,14 +8,14 @@
 }
 
 html {
-  font-size: 18px;
+  font-size: 13px;
   font-family: "montserrat";
 }
 
 /* Main navigation */
 .logo {
   font-family: "geo";
-  font-size: 6rem;
+  font-size: 7rem;
   text-align: center;
 }
 
@@ -31,8 +31,9 @@ html {
   padding-left: 20px;
   text-decoration: none;
   font-family: "montserrat";
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 20px;
+ 
 }
 .greentestlogo {
   color: #8ac927;
@@ -87,6 +88,9 @@ button {
   justify-content: space-between;
 }
 
+.button-wrapper .h2 {
+    font-size: 1.6rem;
+}
 /* title section */
 
 .toDo {
@@ -98,7 +102,7 @@ button {
 .review h2,
 .done h2 {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .inProgress {
@@ -144,12 +148,12 @@ button {
 .cardsTitle h2 {
   font-weight: bold;
   font-size: 1.2rem;
-  margin: 10px;
+  margin-top: 8px;
 }
 
 .cardsTitle img {
   float: right;
-  position: relative;
+  
 }
 
 .cardsDescription {
