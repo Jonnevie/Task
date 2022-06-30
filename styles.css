@@ -201,6 +201,31 @@ padding: 10px;
 background-color: #f1f1f1;
 
 }
+
+#modalBtnDel {
+float: right;
+background-color: #e6585e;
+height: 100%;
+padding: 10px;
+color: white;
+border-radius: 10%;
+font-weight: bold;
+margin-top: 20px;
+margin-right: 15px;
+}
+
+
+#modalEditBtnSubmit{
+float: right;
+background-color: #4f82c4;
+height: 100%;
+padding: 10px;
+color: white;
+border-radius: 10%;
+font-weight: bold;
+margin-top: 20px;
+}
+
 #modalBtn {
 float: right;
 background-color: #4f82c4;
@@ -211,6 +236,7 @@ border-radius: 10%;
 font-weight: bold;
 margin-top: 20px;
 }
+
 
 
 .modal {
@@ -227,6 +253,8 @@ background-color: white;
 padding: 20px;
 
 }
+
+
 
 /* The Close Button */
 .close {
@@ -335,7 +363,7 @@ width: 80%;
       font-weight: bold;
   }
 
-  .modal {
+  .modal  {
     display: none; 
 position: absolute; /* Stay in place */
 z-index: 2; /* Sit on top */
