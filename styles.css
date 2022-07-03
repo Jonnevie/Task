@@ -288,18 +288,24 @@ width: 80%;
       grid-auto-rows: auto;
       padding: 25px 0;
       /* border: #8ac927 solid ; */
+      
     }
   #cardsToDo {
       grid-area: toDo;
+      margin-bottom: 30px;
+     
   }
   #cardsinProgress {
       grid-area: inProgress;
+      margin-bottom: 30px;
   }
   #cardsReview {
       grid-area: Review;
+      margin-bottom: 30px;
   }
   #cardsDone {
       grid-area: Done;
+      margin-bottom: 30px;
   }
 
   
@@ -320,15 +326,19 @@ width: 80%;
     }
   #cardsToDo {
       grid-area: toDo;
+      margin-bottom: 30px;
   }
   #cardsinProgress {
       grid-area: inProgress;
+      margin-bottom: 30px;
   }
   #cardsReview {
       grid-area: Review;
+      margin-bottom: 30px;
   }
   #cardsDone {
       grid-area: Done;
+      margin-bottom: 30px;
   }
 
   .profilePhoto {
