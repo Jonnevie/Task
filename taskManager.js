@@ -1,5 +1,5 @@
- //class constructor
- class TaskManager {
+  //class constructor
+  class TaskManager {
     constructor(
       newTaskName,
       newAssignTo,

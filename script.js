@@ -1,3 +1,4 @@
+
 import {TaskManager} from './TaskManager.js';
 
 window.addEventListener("load", () => {
@@ -118,7 +119,7 @@ window.addEventListener("load", () => {
       e.preventDefault();
       errorElement.innerText = messages.join(". ");
     } else {
-      console.log("hello");
+    //   console.log("hello");
       messages = [];
       errorElement.innerText = messages;
       return (formValidated = true);
@@ -275,7 +276,7 @@ function extractData() {
   }
   addToArray();
 
-  console.log(ourNewTask);
+    console.log(ourNewTask);
   }
 
 
