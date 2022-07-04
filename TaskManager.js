@@ -49,6 +49,8 @@ class TaskManager {
     newDiv.innerHTML = card;
     return newDiv;
   }
+  
+
 
   renderToDo() {
     let card = `<div class=newCard><span><img src="./Resources/redbox.png" alt=""></span>
@@ -84,5 +86,11 @@ class TaskManager {
     return newDiv;
   }
 }
+
+function editTask() {
+  formDelete.style.display = 'block'
+  modalOverlay.style.opacity = "0.3";
+  modalOverlay.style.backgroundColor = "gray";
+};
 
 export { TaskManager };
