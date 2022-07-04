@@ -176,7 +176,7 @@ window.addEventListener("load", () => {
   }
 
   let latestId = [1];
-  
+
 function extractData() {
   
     let ourNewTask = new TaskManager(
@@ -191,82 +191,22 @@ function extractData() {
   
     if (formValidated === true && setStatus.value === "modalToDo") {
       toDoItems.push(ourNewTask);
-  
-      let card = `<div class=newCard><span><img src="./Resources/redbox.png" alt=""></span>
-              <h3> ${taskName.value} </h3> 
-              <p class="taskDescriptionText"> ${description.value} </p>
-              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
-              <hr> 
-              <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p></div>`;
-  
-      function addNewCardDivToDo() {
-        const newDiv = document.createElement("div");
-        cardsToDo.insertAdjacentElement("beforeend", newDiv);
-        newDiv.classList.add("card1");
-        newDiv.addEventListener('click', ()=>{editTask(),window.scrollTo(0, 0)})
-        newDiv.innerHTML = card;
-      }
-      addNewCardDivToDo();
+      ourNewTask.renderToDo();
       resetFormClearModal();
     }
     if (formValidated === true && setStatus.value === "modalInProgress") {
       inProgressItems.push(ourNewTask);
-  
-      let card = `<span><img src="./Resources/yellowbox.png" alt=""></span>
-              <h3> ${taskName.value} </h3> 
-              <p class="taskDescriptionText"> ${description.value} </p>
-              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
-              <hr> 
-              <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p>`;
-  
-      function addNewCardDivInProgress() {
-        const newDiv = document.createElement("div");
-        cardsinProgress.insertAdjacentElement("beforeend", newDiv);
-        newDiv.classList.add("card1");
-        newDiv.addEventListener('click', ()=>{editTask(),window.scrollTo(0, 0);})
-        newDiv.innerHTML = card;
-      }
-      addNewCardDivInProgress();
+      ourNewTask.renderInProgress();
       resetFormClearModal();
     }
     if (formValidated === true && setStatus.value === "modalReview") {
       reviewItems.push(ourNewTask);
-  
-      let card = `<span><img src="./Resources/bluebox.png" alt=""></span>
-              <h3> ${taskName.value} </h3> 
-              <p class="taskDescriptionText"> ${description.value} </p>
-              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
-              <hr> 
-              <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p>`;
-  
-      function addNewCardDivCardsReviews() {
-        const newDiv = document.createElement("div");
-        cardsReview.insertAdjacentElement("beforeend", newDiv);
-        newDiv.classList.add("card1");
-        newDiv.addEventListener('click', ()=>{editTask(),window.scrollTo(0, 0)})
-        newDiv.innerHTML = card;
-      }
-      addNewCardDivCardsReviews();
+      ourNewTask.renderReview()
       resetFormClearModal();
     }
     if (formValidated === true && setStatus.value === "modalDone") {
       doneItems.push(ourNewTask);
-  
-      let card = `<span><img src="./Resources/greenbox.png" alt=""></span>
-              <h3> ${taskName.value} </h3> 
-              <p class="taskDescriptionText"> ${description.value} </p>
-              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
-              <hr> 
-              <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p>`;
-  
-      function addNewCardDivcardsDone() {
-        const newDiv = document.createElement("div");
-        cardsDone.insertAdjacentElement("beforeend", newDiv);
-        newDiv.classList.add("card1");
-        newDiv.addEventListener('click', ()=>{editTask(),window.scrollTo(0, 0)})
-        newDiv.innerHTML = card;
-      }
-      addNewCardDivcardsDone();
+     ourNewTask.renderDone();
       resetFormClearModal();
     }
   function addToArray() {
@@ -279,15 +219,7 @@ function extractData() {
     console.log(ourNewTask);
   }
 
-
-
   ;
-  
-
-
-
-
-
 // Trying out local Storage ---
 
 
