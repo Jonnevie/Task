@@ -215,7 +215,7 @@ function extractData() {
   }
   addToArray();
 
-    console.log(ourNewTask);
+    // console.log(ourNewTask);
   }
 
   ;
