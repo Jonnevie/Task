@@ -1,3 +1,9 @@
+let taskName = document.getElementById("taskName");
+let description = document.getElementById("description");
+let dueDate = document.getElementById("dueDate");
+let formDelete = document.getElementById("formDelete");
+let modalOverlay = document.getElementById("modalOverlay");
+
 //class constructor
 class TaskManager {
   constructor(
