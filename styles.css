@@ -73,6 +73,11 @@ html {
   padding-right: 20px;
 }
 
+.addTaskBtn button:hover {
+  cursor: pointer;
+}
+
+
 .addTaskBtn button {
   background-color: #4f82c4;
   height: 100%;
@@ -214,6 +219,10 @@ margin-top: 20px;
 margin-right: 15px;
 }
 
+#modalBtnDel:hover {
+  cursor: pointer;
+}
+
 
 #modalEditBtnSubmit{
 float: right;
@@ -224,6 +233,10 @@ color: white;
 border-radius: 10%;
 font-weight: bold;
 margin-top: 20px;
+}
+
+#modalEditBtnSubmit:hover {
+  cursor: pointer;
 }
 
 #modalBtn {
@@ -237,6 +250,10 @@ font-weight: bold;
 margin-top: 20px;
 }
 
+
+#modalBtn:hover {
+  cursor: pointer;
+}
 
 
 .modal {
