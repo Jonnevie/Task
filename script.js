@@ -6,23 +6,19 @@ window.addEventListener("load", () => {
   
   // the Date Functionality
   
-  let today = new Date();
-  let dd = String(today.getDate()).padStart(2, "0");
-  let mm = String(today.getMonth() + 1).padStart(2, "0");
-  let yyy = today.getFullYear();
-  let hh = String(today.getHours()).padStart(2, "0");
-  let min = String(today.getMinutes()).padStart(2, "0");
-  
-  let time = `${hh}:${min}`;
-  today = `${dd}-${mm}-${yyy}`;
-  let dateSpan = document.getElementById("dateSpan");
-  
-  dateSpan.innerHTML = `<strong>Date:</strong> ${today} |
-   <strong>Time:</strong> ${time}`;
-  
-  let dateSpanMobile = document.getElementById("dateSpanMobile");
-  dateSpanMobile.innerHTML = `<strong>Date:</strong> ${today} |
-   <strong>Time:</strong> ${time}`;
+  function clockTick() {
+    var currentTime = new Date(),
+        month = currentTime.getMonth() + 1,
+        day = currentTime.getDate(),
+        year = currentTime.getFullYear(),
+        hours = currentTime.getHours(),
+        minutes = currentTime.getMinutes(),
+        seconds = currentTime.getSeconds(),
+        text = (month + "/" + day + "/" + year + ' ' + hours + ':' + minutes + ':' + seconds);
+
+    document.getElementById('dateSpan').innerHTML = text;
+  }
+    setInterval(clockTick, 1000);
   
   //All the lets in the house
   let taskName = document.getElementById("taskName");
@@ -137,8 +133,9 @@ window.addEventListener("load", () => {
   });
   
   //Begin Javascript for adding todo
-  
-  
+ 
+
+
   let latestId = [1];
   
   //class constructor
