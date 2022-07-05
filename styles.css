@@ -142,9 +142,14 @@ html {
   padding-top: 20px;
 }
 
+.cardTitle {
+  overflow-wrap: break-word;
+}
+
 .taskDescriptionText {
   margin: 15px;
   font-size: 14px;
+  overflow-wrap: break-word;
   /* max-height: 100px;
   overflow: scroll;
   overflow-x: hidden;
