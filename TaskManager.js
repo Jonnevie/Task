@@ -3,6 +3,11 @@ let description = document.getElementById("description");
 let dueDate = document.getElementById("dueDate");
 let formDelete = document.getElementById("formDelete");
 let modalOverlay = document.getElementById("modalOverlay");
+let taskNameEdit = document.getElementById("taskNameEdit");
+let assignedToEdit = document.getElementById("assignedToEdit");
+let dueDateEdit = document.getElementById("dueDateEdit");
+let descriptionEdit = document.getElementById("descriptionEdit");
+let setStatusEdit = document.getElementById("setStatusEdit");
 
 //class constructor
 class TaskManager {
@@ -41,7 +46,7 @@ class TaskManager {
       editTask(this.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
-    return newDiv;
+
   }
 
   renderReview() {
@@ -60,7 +65,7 @@ class TaskManager {
       editTask(this.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
-    return newDiv;
+
   }
 
   renderToDo() {
@@ -81,7 +86,7 @@ class TaskManager {
       editTask(this.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
-    return newDiv;
+
   }
 
   renderInProgress() {
@@ -100,20 +105,20 @@ class TaskManager {
       editTask(this.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
-    return newDiv;
+
   }
-  // getAllTasks() {
-  //   return this.retrievedArray
-  // }
-
-  // renderRetrievedTasks() {
-  //   for(i=0; i < retrievedArray.length; i++){
-  //     retrievedArray(i);
-  //     console.log(retrievedArray)
-  // }
-
-
 };
+
+let retrievedArray = [];
+// function getAllTasks(){
+//   return retrievedArray;
+// }
+
+
+for(let i=0; i < localStorage.length; i++) {
+  let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
+retrievedArray.push(x)
+}
 
 
 
@@ -122,19 +127,24 @@ function editTask(a) {
   formDelete.style.display = "block";
   modalOverlay.style.opacity = "0.3";
   modalOverlay.style.backgroundColor = "gray";
+console.log(a);
 
   for (let i = 0; i < retrievedArray.length; i++) {
     //here is where we would put our condition if id
     let x = retrievedArray[i];
-
-    if (x.id === a) {
+    console.log(x.id);
+    if (x.id === a) 
+    {
       taskNameEdit.value = x.newTaskName; //get existing here
       assignedToEdit.value = x.newAssignTo; //get existing here
       dueDateEdit.value = x.newDueDate;
       setStatusEdit.value = x.newSelectStatus;
       descriptionEdit.value = x.newAddDescription;
+    } else {
+      alert ('HI') 
     }
   }
 }
 
+console.log(retrievedArray)
 export { TaskManager };

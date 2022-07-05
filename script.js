@@ -3,7 +3,7 @@ import {TaskManager} from './TaskManager.js';
 
 window.addEventListener("load", () => {  renderRetrievedTasks();
     form.addEventListener("submit", (e) => {
-      e.preventDefault();
+      // e.preventDefault();
       extractData();
       // getAllTasks();
     });
@@ -168,7 +168,7 @@ function storeData(){
       ourNewTask.renderToDo();
       resetFormClearModal();
       addToArray();
-      console.log(toDoItems);
+      // console.log(toDoItems);
     }
     if (formValidated === true && setStatus.value === "modalInProgress") {
       inProgressItems.push(ourNewTask);
@@ -200,7 +200,7 @@ function storeData(){
   };
 
 
-  var retrievedArray = [];
+  let retrievedArray = [];
   // function getAllTasks(){
   //   return retrievedArray;
   // }
