@@ -169,31 +169,35 @@ function storeData(){
       storeData();
       ourNewTask.renderToDo();
       resetFormClearModal();
+      addToArray();
     }
     if (formValidated === true && setStatus.value === "modalInProgress") {
       inProgressItems.push(ourNewTask);
       storeData();
       ourNewTask.renderInProgress();
       resetFormClearModal();
+      addToArray();
     }
     if (formValidated === true && setStatus.value === "modalReview") {
       reviewItems.push(ourNewTask);
       storeData();
       ourNewTask.renderReview()
       resetFormClearModal();
+      addToArray();
     }
     if (formValidated === true && setStatus.value === "modalDone") {
       doneItems.push(ourNewTask);
       storeData();
      ourNewTask.renderDone();
       resetFormClearModal();
+      addToArray();
     }
     function addToArray() {
       let myID = latestID.at(-1);
       myID++;
       latestID.push(myID);
       }
-      addToArray();
+      
   };
 
 
@@ -215,12 +219,12 @@ console.log(retrievedArray)
       console.log(retrievedArray[i]);
       let x = retrievedArray[i];
       if (x.newSelectStatus === "modalReview"){
-        let card = `<span><img src="./Resources/bluebox.png" alt=""></span>
+        let card = `<div id="${x.id}"><span><img src="./Resources/bluebox.png" alt=""></span>
               <h3> ${x.newTaskName} </h3> 
               <p class="taskDescriptionText"> ${x.newAddDescription} </p>
               <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
               <hr> 
-              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p>`;
+              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
     const newDiv = document.createElement("div");
     cardsReview.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
@@ -231,12 +235,12 @@ console.log(retrievedArray)
 
       }
       else if (x.newSelectStatus === "modalToDo"){
-        let card = `<span><img src="./Resources/redbox.png" alt=""></span>
+        let card = `<div id="${x.id}"><span><img src="./Resources/redbox.png" alt=""></span>
               <h3> ${x.newTaskName} </h3> 
               <p class="taskDescriptionText"> ${x.newAddDescription} </p>
               <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
               <hr> 
-              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p>`;
+              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p> </div>`;
     const newDiv = document.createElement("div");
     cardsToDo.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
@@ -247,12 +251,12 @@ console.log(retrievedArray)
 
       }
       else if (x.newSelectStatus === "modalDone"){
-        let card = `<span><img src="./Resources/greenbox.png" alt=""></span>
+        let card = `<div id="${x.id}"><span><img src="./Resources/greenbox.png" alt=""></span>
               <h3> ${x.newTaskName} </h3> 
               <p class="taskDescriptionText"> ${x.newAddDescription} </p>
               <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
               <hr> 
-              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p>`;
+              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
     const newDiv = document.createElement("div");
     cardsDone.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
@@ -263,12 +267,12 @@ console.log(retrievedArray)
 
       }
       else if (x.newSelectStatus === "modalInProgress"){
-        let card = `<span><img src="./Resources/yellowbox.png" alt=""></span>
+        let card = `<div id="${x.id}"><span><img src="./Resources/yellowbox.png" alt=""></span>
               <h3> ${x.newTaskName} </h3> 
               <p class="taskDescriptionText"> ${x.newAddDescription} </p>
               <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
               <hr> 
-              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p>`;
+              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
     const newDiv = document.createElement("div");
     cardsinProgress.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
@@ -281,37 +285,3 @@ console.log(retrievedArray)
  
   }
  console.log(retrievedArray);
-
-//     let retrievedArray= [];
-//     function pushRetrieved() {
-//        for(let i=0; i < ourNewTask.id.length; i++ ) {
-//     let result = JSON.parse(localStorage.getItem(ourNewTask.id));
-//     taskArray.push(result);
-//  }
-//     }
-//  pushRetrieved();
-//  console.log(retrievedArray);
-
-
-// let ourNewTaskJSON = JSON.stringify(ourNewTask);
-// localStorage.setItem("tasks", ourNewTaskJSON)
-// console.log(ourNewTaskJSON);
-    // console.log(ourNewTask);
-  
-
-  ;
-
- 
-
-// Trying out local Storage ---
-
-// save() {
-//   let tasksJson = JSON.stringify(this._tasks); // create JSON string of tasks
-//   // Store the JSON string in localStorage
-//   localStorage.setItem("tasks", tasksJson);
-//   // Convert this._currentId to a string
-//   let currentId = String(this._currentId);
-//   // Store the currentId variable in localStorage.
-//   localStorage.setItem("currentId", currentId);
-// }
-// localStorage.getItem(taskName.value);
