@@ -12,14 +12,24 @@ class TaskManager {
     newDueDate,
     newSelectStatus,
     newAddDescription,
-    latestId
+    id
   ) {
+    this.taskArray = [];
     this.newTaskName = newTaskName;
     this.newAssignTo = newAssignTo;
     this.newDueDate = newDueDate;
     this.newSelectStatus = newSelectStatus;
     this.newAddDescription = newAddDescription;
-    this.latestId = latestId;
+    this.id = TaskManager.incrementID();
+  }
+
+
+  static incrementID() {
+    if (!this.latestId) {
+      this.latestId = 1;
+    } else {
+      this.latestId++;
+    } return this.latestId;
   }
 
   renderDone() {
@@ -55,8 +65,6 @@ class TaskManager {
     newDiv.innerHTML = card;
     return newDiv;
   }
-  
-
 
   renderToDo() {
     let card = `<div class=newCard><span><img src="./Resources/redbox.png" alt=""></span>
@@ -94,9 +102,9 @@ class TaskManager {
 }
 
 function editTask() {
-  formDelete.style.display = 'block'
+  formDelete.style.display = "block";
   modalOverlay.style.opacity = "0.3";
   modalOverlay.style.backgroundColor = "gray";
-};
+}
 
 export { TaskManager };

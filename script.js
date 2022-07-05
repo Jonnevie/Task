@@ -46,29 +46,19 @@ window.addEventListener("load", () => {
   let formDelete = document.getElementById("formDelete");
   let closebtnedit = document.getElementById("closebtnedit");
   let card1 = document.getElementsByClassName("card1");
-  
+  let toDoItems = [];
+  let inProgressItems = [];
+  let reviewItems = [];
+  let doneItems = [];
+  let modalBtn = document.getElementById("modalBtn");
+  let cardsToDo = document.getElementById("cardsToDo");
+  let cardsinProgress = document.getElementById("cardsinProgress");
+  let cardsReview = document.getElementById("cardsReview");
+  let cardsDone = document.getElementById("cardsDone");
   let modalOverlay = document.getElementById("modalOverlay");
   let mobileAddTaskBtn = document.getElementById("addTaskBtnMobile");
   
   //Click events
-  
-  for (let i = 0; i < card1.length; i++) {
-      card1[i].addEventListener('click', ()=>{editTask()})
-      }
-      
-      function editTask(){
-          formDelete.style.display = 'block'
-          modalOverlay.style.opacity = "0.3";
-          modalOverlay.style.backgroundColor = "gray";
-      };
-  
-  for (let i = 0; i < card1.length; i++) {
-    card1.item(i).addEventListener("click", function () {
-      formDelete.style.display = "block";
-      modalOverlay.style.opacity = "0.3";
-      modalOverlay.style.backgroundColor = "gray";
-    });
-  }
   btn.onclick = function () {
     modal.style.display = "block";
     modalOverlay.style.opacity = "0.3";
@@ -90,15 +80,16 @@ window.addEventListener("load", () => {
     modalOverlay.style.backgroundColor = "gray";
   };
   
-  let formValidated = false;
+ 
   
   //Validating the form fields
+
+  let formValidated = false;
   form.addEventListener("submit", (e) => {
     let messages = [];
     if (taskName.value === "") {
       messages.push("Task Name is Required");
     }
-  
     if (taskName.value.length < 8) {
       messages.push("Task Name must be longer than 8 characters");
     }
@@ -118,7 +109,6 @@ window.addEventListener("load", () => {
       e.preventDefault();
       errorElement.innerText = messages.join(". ");
     } else {
-    //   console.log("hello");
       messages = [];
       errorElement.innerText = messages;
       return (formValidated = true);
@@ -134,99 +124,102 @@ window.addEventListener("load", () => {
     let minDate = `${yearToday}-${monthToday}-${dateToday}`;
     dueDate.min = minDate;
   });
-  
-  dueDate2.addEventListener("click", function () {
-    let today = new Date();
-    let dateToday = String(today.getDate()).padStart(2, "0");
-    let monthToday = String(today.getMonth() + 1).padStart(2, "0");
-    let yearToday = today.getFullYear();
-    let minDate = `${yearToday}-${monthToday}-${dateToday}`;
-    dueDate2.min = minDate;
-  });
-  
-  //Begin Javascript for adding todo
-  
 
-  
-
-  
-  //assigning lets
-  
-  let toDoItems = [];
-  
-  let inProgressItems = [];
-  let reviewItems = [];
-  let doneItems = [];
-  let modalBtn = document.getElementById("modalBtn");
-  let cardsToDo = document.getElementById("cardsToDo");
-  let cardsinProgress = document.getElementById("cardsinProgress");
-  let cardsReview = document.getElementById("cardsReview");
-  let cardsDone = document.getElementById("cardsDone");
-  
-  /// extract information from input fields on submit button click
-  
   function resetFormClearModal() {
       form.reset();
       modal.style.display = "none";
       modalOverlay.style.opacity = "1";
       modalOverlay.style.backgroundColor = "transparent";
       formValidated = false;
-  
   }
 
-  let latestId = [1];
 
 function extractData() {
-  
+
     let ourNewTask = new TaskManager(
       taskName.value,
       assignedTo.value,
       dueDate.value,
       setStatus.value,
       description.value,
-      latestId.at(-1),
     );
-  
+
+
+function storeData(){ 
+  localStorage.setItem(ourNewTask.id, JSON.stringify(ourNewTask));
+  // return localStorage
+}
+
   
     if (formValidated === true && setStatus.value === "modalToDo") {
       toDoItems.push(ourNewTask);
+      storeData();
       ourNewTask.renderToDo();
       resetFormClearModal();
+ 
+
     }
     if (formValidated === true && setStatus.value === "modalInProgress") {
       inProgressItems.push(ourNewTask);
+      storeData();
       ourNewTask.renderInProgress();
       resetFormClearModal();
+
     }
     if (formValidated === true && setStatus.value === "modalReview") {
       reviewItems.push(ourNewTask);
+      storeData();
       ourNewTask.renderReview()
       resetFormClearModal();
+
     }
     if (formValidated === true && setStatus.value === "modalDone") {
       doneItems.push(ourNewTask);
+      storeData();
      ourNewTask.renderDone();
       resetFormClearModal();
     }
-  function addToArray() {
-  let x = latestId.at(-1);
-  x++;
-  latestId.push(x);
-  }
-  addToArray();
+  
 
+    let retrievedArray = [];
+    for(let i=0; i < localStorage.length; i++) {
+         let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    retrievedArray.push(x)
+    }
+
+    console.log(retrievedArray);
+  };
+
+//     let retrievedArray= [];
+//     function pushRetrieved() {
+//        for(let i=0; i < ourNewTask.id.length; i++ ) {
+//     let result = JSON.parse(localStorage.getItem(ourNewTask.id));
+//     taskArray.push(result);
+//  }
+//     }
+//  pushRetrieved();
+//  console.log(retrievedArray);
+
+
+// let ourNewTaskJSON = JSON.stringify(ourNewTask);
+// localStorage.setItem("tasks", ourNewTaskJSON)
+// console.log(ourNewTaskJSON);
     // console.log(ourNewTask);
-  }
+  
 
   ;
+
+ 
+
 // Trying out local Storage ---
 
-
-//       localStorage.setItem('New Task Name', taskName.value);
-//       localStorage.setItem('New Assigned To', assignedTo.value);
-//       localStorage.setItem('New Due Date', dueDate.value);
-//       localStorage.setItem('New Status', setStatus.value);
-//       localStorage.setItem('New Description', description.value);
-//       localStorage.setItem('New ID', latestId.at(-1));
-  
+// save() {
+//   let tasksJson = JSON.stringify(this._tasks); // create JSON string of tasks
+//   // Store the JSON string in localStorage
+//   localStorage.setItem("tasks", tasksJson);
+//   // Convert this._currentId to a string
+//   let currentId = String(this._currentId);
+//   // Store the currentId variable in localStorage.
+//   localStorage.setItem("currentId", currentId);
+// }
 // localStorage.getItem(taskName.value);
