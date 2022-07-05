@@ -59,6 +59,7 @@ window.addEventListener("load", () => {  renderRetrievedTasks();
   let cardsDone = document.getElementById("cardsDone");
   let modalOverlay = document.getElementById("modalOverlay");
   let mobileAddTaskBtn = document.getElementById("addTaskBtnMobile");
+  let modalBtnDone = document.getElementById("modalBtnDone");
   
   //Click events
   btn.onclick = function () {
@@ -81,6 +82,10 @@ window.addEventListener("load", () => {  renderRetrievedTasks();
     modalOverlay.style.opacity = "0.3";
     modalOverlay.style.backgroundColor = "gray";
   };
+
+  modalBtnDone.onclick = function () {
+
+  }
 
   function editTask() {
     formDelete.style.display = "block";

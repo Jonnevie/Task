@@ -34,12 +34,16 @@ class TaskManager {
 
   renderDone() {
     const newDiv = document.createElement("div");
-    let card = `<span><img src="./Resources/greenbox.png" alt=""></span>
+    let card = `<div id="${this.id}">
+      <span><img src="./Resources/greenbox.png" alt=""></span>
       <h3 class="cardTitle> ${taskName.value} </h3> 
       <p class="taskDescriptionText"> ${description.value} </p>
       <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
       <hr> 
-      <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p>`;
+      <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p>
+      </div>`
+      
+      console.log(card);
     cardsDone.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
@@ -50,13 +54,15 @@ class TaskManager {
   }
 
   renderReview() {
-    let card = `<span><img src="./Resources/bluebox.png" alt=""></span>
+    let card = ` <div id="${this.id}">
+    <span><img src="./Resources/bluebox.png" alt=""></span>
               <h3 class="cardTitle> ${taskName.value} </h3> 
               <p class="taskDescriptionText"> ${description.value} </p>
               <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
               <hr> 
-              <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p>`;
-    const newDiv = document.createElement("div");
+              <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p></div>`;
+              console.log(card);
+              const newDiv = document.createElement("div");
     cardsReview.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
@@ -67,13 +73,15 @@ class TaskManager {
   }
 
   renderToDo() {
-    let card = `<div class=newCard><span><img src="./Resources/redbox.png" alt=""></span>
+    let card = `<div id="${this.id}">
+    <span><img src="./Resources/redbox.png" alt=""></span>
               <h3 class="cardTitle> ${taskName.value} </h3> 
               <p class="taskDescriptionText"> ${description.value} </p>
               <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
               <hr> 
               <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p></div>`;
-    const newDiv = document.createElement("div");
+              console.log(card);
+              const newDiv = document.createElement("div");
     cardsToDo.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
@@ -84,13 +92,15 @@ class TaskManager {
   }
 
   renderInProgress() {
-    let card = `<span><img src="./Resources/yellowbox.png" alt=""></span>
+    let card = `<div id="${this.id}">
+    <span><img src="./Resources/yellowbox.png" alt=""></span>
   <h3 class="cardTitle> ${taskName.value} </h3> 
   <p class="taskDescriptionText"> ${description.value} </p>
   <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
   <hr> 
-  <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p>`;
-    const newDiv = document.createElement("div");
+  <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p></div>`;
+  console.log(card);  
+  const newDiv = document.createElement("div");
     cardsinProgress.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
