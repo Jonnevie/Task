@@ -1,9 +1,11 @@
 import {TaskManager} from './TaskManager.js';
 
-window.addEventListener("load", () => {
+
+window.addEventListener("load", () => {  renderRetrievedTasks();
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       extractData();
+      // getAllTasks();
     });
   });
   
@@ -79,8 +81,12 @@ window.addEventListener("load", () => {
     modalOverlay.style.opacity = "0.3";
     modalOverlay.style.backgroundColor = "gray";
   };
-  
- 
+
+  function editTask() {
+    formDelete.style.display = "block";
+    modalOverlay.style.opacity = "0.3";
+    modalOverlay.style.backgroundColor = "gray";
+  }
   
   //Validating the form fields
 
@@ -133,7 +139,8 @@ window.addEventListener("load", () => {
       formValidated = false;
   }
 
-
+let latestID = [Math.max(localStorage.length)];
+console.log(localStorage.length)
 function extractData() {
 
     let ourNewTask = new TaskManager(
@@ -142,7 +149,9 @@ function extractData() {
       dueDate.value,
       setStatus.value,
       description.value,
+      latestID.at(-1)
     );
+
 
 
 function storeData(){ 
@@ -150,28 +159,23 @@ function storeData(){
   // return localStorage
 }
 
-  
     if (formValidated === true && setStatus.value === "modalToDo") {
       toDoItems.push(ourNewTask);
       storeData();
       ourNewTask.renderToDo();
       resetFormClearModal();
- 
-
     }
     if (formValidated === true && setStatus.value === "modalInProgress") {
       inProgressItems.push(ourNewTask);
       storeData();
       ourNewTask.renderInProgress();
       resetFormClearModal();
-
     }
     if (formValidated === true && setStatus.value === "modalReview") {
       reviewItems.push(ourNewTask);
       storeData();
       ourNewTask.renderReview()
       resetFormClearModal();
-
     }
     if (formValidated === true && setStatus.value === "modalDone") {
       doneItems.push(ourNewTask);
@@ -179,16 +183,99 @@ function storeData(){
      ourNewTask.renderDone();
       resetFormClearModal();
     }
-  
-
-    let retrievedArray = [];
-    for(let i=0; i < localStorage.length; i++) {
-         let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
-    retrievedArray.push(x)
-    }
-
-    console.log(retrievedArray);
+    function addToArray() {
+      let myID = latestID.at(-1);
+      myID++;
+      latestID.push(myID);
+      }
+      addToArray();
   };
+
+
+  let retrievedArray = [];
+  // function getAllTasks(){
+  //   return retrievedArray;
+  // }
+  for(let i=0; i < localStorage.length; i++) {
+    let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
+retrievedArray.push(x)
+
+
+
+
+console.log(retrievedArray)
+}
+  function renderRetrievedTasks() {
+    for (let i=0; i < retrievedArray.length; i++) {
+      console.log(retrievedArray[i]);
+      let x = retrievedArray[i];
+      if (x.newSelectStatus === "modalReview"){
+        let card = `<span><img src="./Resources/bluebox.png" alt=""></span>
+              <h3> ${x.newTaskName} </h3> 
+              <p class="taskDescriptionText"> ${x.newAddDescription} </p>
+              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+              <hr> 
+              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p>`;
+    const newDiv = document.createElement("div");
+    cardsReview.insertAdjacentElement("beforeend", newDiv);
+    newDiv.classList.add("card1");
+    newDiv.addEventListener("click", () => {
+      editTask(), window.scrollTo(0, 0);
+    });
+    newDiv.innerHTML = card;
+
+      }
+      else if (x.newSelectStatus === "modalToDo"){
+        let card = `<span><img src="./Resources/redbox.png" alt=""></span>
+              <h3> ${x.newTaskName} </h3> 
+              <p class="taskDescriptionText"> ${x.newAddDescription} </p>
+              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+              <hr> 
+              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p>`;
+    const newDiv = document.createElement("div");
+    cardsToDo.insertAdjacentElement("beforeend", newDiv);
+    newDiv.classList.add("card1");
+    newDiv.addEventListener("click", () => {
+      editTask(), window.scrollTo(0, 0);
+    });
+    newDiv.innerHTML = card;
+
+      }
+      else if (x.newSelectStatus === "modalDone"){
+        let card = `<span><img src="./Resources/greenbox.png" alt=""></span>
+              <h3> ${x.newTaskName} </h3> 
+              <p class="taskDescriptionText"> ${x.newAddDescription} </p>
+              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+              <hr> 
+              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p>`;
+    const newDiv = document.createElement("div");
+    cardsDone.insertAdjacentElement("beforeend", newDiv);
+    newDiv.classList.add("card1");
+    newDiv.addEventListener("click", () => {
+      editTask(), window.scrollTo(0, 0);
+    });
+    newDiv.innerHTML = card;
+
+      }
+      else if (x.newSelectStatus === "modalInProgress"){
+        let card = `<span><img src="./Resources/yellowbox.png" alt=""></span>
+              <h3> ${x.newTaskName} </h3> 
+              <p class="taskDescriptionText"> ${x.newAddDescription} </p>
+              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+              <hr> 
+              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p>`;
+    const newDiv = document.createElement("div");
+    cardsinProgress.insertAdjacentElement("beforeend", newDiv);
+    newDiv.classList.add("card1");
+    newDiv.addEventListener("click", () => {
+      editTask(), window.scrollTo(0, 0);
+    });
+    newDiv.innerHTML = card;
+      }
+    }
+ 
+  }
+ console.log(retrievedArray);
 
 //     let retrievedArray= [];
 //     function pushRetrieved() {

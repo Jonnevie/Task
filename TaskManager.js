@@ -12,7 +12,7 @@ class TaskManager {
     newDueDate,
     newSelectStatus,
     newAddDescription,
-    id
+    latestID
   ) {
     this.taskArray = [];
     this.newTaskName = newTaskName;
@@ -20,17 +20,17 @@ class TaskManager {
     this.newDueDate = newDueDate;
     this.newSelectStatus = newSelectStatus;
     this.newAddDescription = newAddDescription;
-    this.id = TaskManager.incrementID();
+    this.id = latestID;
   }
 
 
-  static incrementID() {
-    if (!this.latestId) {
-      this.latestId = 1;
-    } else {
-      this.latestId++;
-    } return this.latestId;
-  }
+  // static incrementID() {
+  //   if (!this.latestId) {
+  //     this.latestId = 1;
+  //   } else {
+  //     this.latestId++;
+  //   } return this.latestId;
+  // }
 
   renderDone() {
     const newDiv = document.createElement("div");
@@ -99,7 +99,18 @@ class TaskManager {
     newDiv.innerHTML = card;
     return newDiv;
   }
-}
+  // getAllTasks() {
+  //   return this.retrievedArray
+  // }
+
+  // renderRetrievedTasks() {
+  //   for(i=0; i < retrievedArray.length; i++){
+  //     retrievedArray(i);
+  //     console.log(retrievedArray)
+  // }
+};
+
+
 
 function editTask() {
   formDelete.style.display = "block";
