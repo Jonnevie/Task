@@ -38,7 +38,7 @@ class TaskManager {
     cardsDone.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
-      editTask(), window.scrollTo(0, 0);
+      editTask(this.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
     return newDiv;
@@ -57,7 +57,7 @@ class TaskManager {
     cardsReview.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
-      editTask(), window.scrollTo(0, 0);
+      editTask(this.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
     return newDiv;
@@ -72,11 +72,13 @@ class TaskManager {
               <hr> 
               <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p></div>`;
               console.log(card);
+              //this targets the specific 
+              console.log(this.id);
               const newDiv = document.createElement("div");
     cardsToDo.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
-      editTask(), window.scrollTo(0, 0);
+      editTask(this.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
     return newDiv;
@@ -95,7 +97,7 @@ class TaskManager {
     cardsinProgress.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
-      editTask(), window.scrollTo(0, 0);
+      editTask(this.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
     return newDiv;
@@ -109,14 +111,30 @@ class TaskManager {
   //     retrievedArray(i);
   //     console.log(retrievedArray)
   // }
+
+
 };
 
 
 
-function editTask() {
+
+function editTask(a) {
   formDelete.style.display = "block";
   modalOverlay.style.opacity = "0.3";
   modalOverlay.style.backgroundColor = "gray";
+
+  for (let i = 0; i < retrievedArray.length; i++) {
+    //here is where we would put our condition if id
+    let x = retrievedArray[i];
+
+    if (x.id === a) {
+      taskNameEdit.value = x.newTaskName; //get existing here
+      assignedToEdit.value = x.newAssignTo; //get existing here
+      dueDateEdit.value = x.newDueDate;
+      setStatusEdit.value = x.newSelectStatus;
+      descriptionEdit.value = x.newAddDescription;
+    }
+  }
 }
 
 export { TaskManager };

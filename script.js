@@ -90,27 +90,8 @@ window.addEventListener("load", () => {  renderRetrievedTasks();
   };
 
   modalBtnDone.onclick = function () {
-
   }
 
-  function editTask() {
-    formDelete.style.display = "block";
-    modalOverlay.style.opacity = "0.3";
-    modalOverlay.style.backgroundColor = "gray";
-    loopToGetExisting();
-      
-      } 
-    
-  
-function loopToGetExisting() {
-    for (let i=0; i < retrievedArray.length; i++) {
-      console.log(retrievedArray[i]);;
-  taskNameEdit.value = retrievedArray[i].newTaskName; //get existing here
-  assignedToEdit.value = retrievedArray[i].newAssignTo;  //get existing here
-  dueDateEdit.value = retrievedArray[i].newDueDate;
-  setStatusEdit.value = retrievedArray[i].newSelectStatus;
-  descriptionEdit.value = retrievedArray[i].newAddDescription;
-    }}
   
   //Validating the form fields
 
@@ -165,7 +146,6 @@ function loopToGetExisting() {
 
 let latestID = [Math.max(localStorage.length)];
 
-
 // console.log(localStorage.length)
 function extractData() {
 
@@ -178,11 +158,8 @@ function extractData() {
       latestID.at(-1)
     );
 
-
-
 function storeData(){ 
   localStorage.setItem(ourNewTask.id, JSON.stringify(ourNewTask));
-  // return localStorage
 }
 
     if (formValidated === true && setStatus.value === "modalToDo") {
@@ -191,6 +168,7 @@ function storeData(){
       ourNewTask.renderToDo();
       resetFormClearModal();
       addToArray();
+      console.log(toDoItems);
     }
     if (formValidated === true && setStatus.value === "modalInProgress") {
       inProgressItems.push(ourNewTask);
@@ -222,18 +200,44 @@ function storeData(){
   };
 
 
-  let retrievedArray = [];
+  var retrievedArray = [];
   // function getAllTasks(){
   //   return retrievedArray;
   // }
+
+
   for(let i=0; i < localStorage.length; i++) {
     let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
 retrievedArray.push(x)
-
-
 // console.log(retrievedArray)
 }
+
   function renderRetrievedTasks() {
+
+
+  function editTask(a) {
+    formDelete.style.display = "block";
+    modalOverlay.style.opacity = "0.3";
+    modalOverlay.style.backgroundColor = "gray";
+  
+    for (let i=0; i < retrievedArray.length; i++) {
+      //here is where we would put our condition if id 
+    let x = retrievedArray[i];
+   
+    if( x.id === a )
+      {
+      taskNameEdit.value = x.newTaskName; //get existing here
+  assignedToEdit.value = x.newAssignTo;  //get existing here
+  dueDateEdit.value = x.newDueDate;
+  setStatusEdit.value = x.newSelectStatus;
+  descriptionEdit.value = x.newAddDescription;
+    }
+  }
+
+      } 
+
+
+
     for (let i=0; i < retrievedArray.length; i++) {
       // console.log(retrievedArray[i]);
       let x = retrievedArray[i];
@@ -248,9 +252,8 @@ retrievedArray.push(x)
     cardsReview.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
   
-
     newDiv.addEventListener("click", () => {
-      editTask(), window.scrollTo(0, 0);
+      editTask(x.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
 
@@ -266,7 +269,7 @@ retrievedArray.push(x)
     cardsToDo.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
-      editTask(), window.scrollTo(0, 0);
+      editTask(x.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
 
@@ -282,7 +285,7 @@ retrievedArray.push(x)
     cardsDone.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
-      editTask(), window.scrollTo(0, 0);
+      editTask(x.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
 
@@ -298,19 +301,13 @@ retrievedArray.push(x)
     cardsinProgress.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
-      editTask(), window.scrollTo(0, 0);
+      editTask(x.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
       }
     }
+
  
   }
 
-//get retretived array
 
-//populate fields of edit modal onclick
-
-//submit?
-
-
-//  console.log(retrievedArray);
