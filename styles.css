@@ -95,6 +95,11 @@ html {
   padding: 25px 0;
   /* border: #8ac927 solid ; */
 }
+
+.cardTitle {
+  overflow-wrap: break-word;
+}
+
 #cardsToDo {
   grid-area: toDo;
 }
@@ -145,6 +150,7 @@ html {
 .taskDescriptionText {
   margin: 15px;
   font-size: 14px;
+  overflow-wrap: break-word;
   /* max-height: 100px;
   overflow: scroll;
   overflow-x: hidden;

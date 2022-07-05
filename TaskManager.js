@@ -35,7 +35,7 @@ class TaskManager {
   renderDone() {
     const newDiv = document.createElement("div");
     let card = `<span><img src="./Resources/greenbox.png" alt=""></span>
-      <h3> ${taskName.value} </h3> 
+      <h3 class="cardTitle> ${taskName.value} </h3> 
       <p class="taskDescriptionText"> ${description.value} </p>
       <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
       <hr> 
@@ -51,7 +51,7 @@ class TaskManager {
 
   renderReview() {
     let card = `<span><img src="./Resources/bluebox.png" alt=""></span>
-              <h3> ${taskName.value} </h3> 
+              <h3 class="cardTitle> ${taskName.value} </h3> 
               <p class="taskDescriptionText"> ${description.value} </p>
               <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
               <hr> 
@@ -68,7 +68,7 @@ class TaskManager {
 
   renderToDo() {
     let card = `<div class=newCard><span><img src="./Resources/redbox.png" alt=""></span>
-              <h3> ${taskName.value} </h3> 
+              <h3 class="cardTitle> ${taskName.value} </h3> 
               <p class="taskDescriptionText"> ${description.value} </p>
               <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
               <hr> 
@@ -85,7 +85,7 @@ class TaskManager {
 
   renderInProgress() {
     let card = `<span><img src="./Resources/yellowbox.png" alt=""></span>
-  <h3> ${taskName.value} </h3> 
+  <h3 class="cardTitle> ${taskName.value} </h3> 
   <p class="taskDescriptionText"> ${description.value} </p>
   <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
   <hr> 
