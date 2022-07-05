@@ -216,7 +216,7 @@ color: white;
 border-radius: 10%;
 font-weight: bold;
 margin-top: 20px;
-margin-right: 15px;
+/* margin-right: 15px; */
 }
 
 #modalBtnDel:hover {
@@ -250,6 +250,19 @@ font-weight: bold;
 margin-top: 20px;
 }
 
+.button-flex {
+  display: flex;
+  justify-content: space-between;
+}
+#modalBtnDone {
+  background-color: #8ac927;
+  height: 100%;
+  padding: 10px;
+  color: white;
+  border-radius: 10%;
+  font-weight: bold;
+  margin-top: 20px;
+}
 
 #modalBtn:hover {
   cursor: pointer;
