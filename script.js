@@ -60,6 +60,12 @@ window.addEventListener("load", () => {  renderRetrievedTasks();
   let modalOverlay = document.getElementById("modalOverlay");
   let mobileAddTaskBtn = document.getElementById("addTaskBtnMobile");
   let modalBtnDone = document.getElementById("modalBtnDone");
+  let taskNameEdit = document.getElementById("taskNameEdit");
+  let assignedToEdit = document.getElementById("assignedToEdit");
+  let dueDateEdit = document.getElementById("dueDateEdit");
+  let descriptionEdit = document.getElementById("descriptionEdit");
+  let setStatusEdit = document.getElementById("setStatusEdit");
+
   
   //Click events
   btn.onclick = function () {
@@ -91,7 +97,20 @@ window.addEventListener("load", () => {  renderRetrievedTasks();
     formDelete.style.display = "block";
     modalOverlay.style.opacity = "0.3";
     modalOverlay.style.backgroundColor = "gray";
-  }
+    loopToGetExisting();
+      
+      } 
+    
+  
+function loopToGetExisting() {
+    for (let i=0; i < retrievedArray.length; i++) {
+      console.log(retrievedArray[i]);;
+  taskNameEdit.value = retrievedArray[i].newTaskName; //get existing here
+  assignedToEdit.value = retrievedArray[i].newAssignTo;  //get existing here
+  dueDateEdit.value = retrievedArray[i].newDueDate;
+  setStatusEdit.value = retrievedArray[i].newSelectStatus;
+  descriptionEdit.value = retrievedArray[i].newAddDescription;
+    }}
   
   //Validating the form fields
 
@@ -145,7 +164,9 @@ window.addEventListener("load", () => {  renderRetrievedTasks();
   }
 
 let latestID = [Math.max(localStorage.length)];
-console.log(localStorage.length)
+
+
+// console.log(localStorage.length)
 function extractData() {
 
     let ourNewTask = new TaskManager(
@@ -210,13 +231,11 @@ function storeData(){
 retrievedArray.push(x)
 
 
-
-
-console.log(retrievedArray)
+// console.log(retrievedArray)
 }
   function renderRetrievedTasks() {
     for (let i=0; i < retrievedArray.length; i++) {
-      console.log(retrievedArray[i]);
+      // console.log(retrievedArray[i]);
       let x = retrievedArray[i];
       if (x.newSelectStatus === "modalReview"){
         let card = `<div id="${x.id}"><span><img src="./Resources/bluebox.png" alt=""></span>
@@ -228,6 +247,8 @@ console.log(retrievedArray)
     const newDiv = document.createElement("div");
     cardsReview.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
+  
+
     newDiv.addEventListener("click", () => {
       editTask(), window.scrollTo(0, 0);
     });
@@ -284,4 +305,12 @@ console.log(retrievedArray)
     }
  
   }
- console.log(retrievedArray);
+
+//get retretived array
+
+//populate fields of edit modal onclick
+
+//submit?
+
+
+//  console.log(retrievedArray);
