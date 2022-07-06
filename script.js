@@ -214,148 +214,108 @@ for (let i = 0; i < localStorage.length; i++) {
   // console.log(retrievedArray)
 }
 
-function renderRetrievedTasks() {
+
   
-function refresh() {
-  window.location.reload();
-}
+
 
   function editTasks(a) {
-    
     formDelete.style.display = "block";
     modalOverlay.style.opacity = "0.3";
     modalOverlay.style.backgroundColor = "gray";
-    uniqueID.style.display = "none";
-    // location.reload();  //RELOADS HERE!!!
-    for (let i = 0; i < retrievedArray.length; i++) {
-      //here is where we would put our condition if id
-      let x = retrievedArray[i];
-      // location.reload();  RELOADS HERE!!!
-      if (x.id === a) {
-        taskNameEdit.value = x.newTaskName; //get existing here
-        assignedToEdit.value = x.newAssignTo; //get existing here
-        dueDateEdit.value = x.newDueDate;
-        setStatusEdit.value = x.newSelectStatus;
-        descriptionEdit.value = x.newAddDescription;
-        uniqueID.value = x.id;
-
-        modalBtnDel.addEventListener("click", () => {
-          // location.reload(); DOESNT RELOAD HERE
-          formDelete.style.display = "none";
-          modalOverlay.style.opacity = "1";
-          modalOverlay.style.backgroundColor = "transparent";
-          
-          for (let i = 0; i < retrievedArray.length; i++) {
-            let x = retrievedArray[i];
-            console.log(x.id);
-            // console.log(taskNameEdit.value);
-            // console.log(taskNameEdit.value);
-            if (x.id == uniqueID.value) {
-              window.localStorage.removeItem(x.id);
-              document.getElementById(`${x.id}`).style.display = "none";
-            }
-          }
-          setTimeout(refresh,500);
-        });
-
-        modalEditBtnSubmit.addEventListener("click", () => {
-          formDelete.style.display = "none";
-          modalOverlay.style.opacity = "1";
-          modalOverlay.style.backgroundColor = "transparent";
-
-          for (let i = 0; i < retrievedArray.length; i++) {
-            let x = retrievedArray[i];
-            console.log(x.id);
-            console.log(uniqueID.value);
-            if (x.id === uniqueID.value) {
-              x.newTaskName = taskNameEdit.value;
-              x.newAssignTo = assignedToEdit.value;
-              x.newDueDate = dueDateEdit.value;
-              x.newSelectStatus = setStatusEdit.value;
-              x.newAddDescription = descriptionEdit.value;
-              uniqueID.value = x.id;
-              localStorage.setItem(ourNewTask.id, JSON.stringify(x));
-              
-            }};
-
-            // let ourNewTask = new TaskManager(
-            //   taskName.value,
-            //   assignedTo.value,
-            //   dueDate.value,
-            //   setStatus.value,
-            //   description.value,
-            //   latestID.at(-1)
-            // );
-
-            // function storeData() {
-            //   localStorage.setItem(ourNewTask.id, JSON.stringify(ourNewTask));
-            // }
-          
-        
-      })
-      }}}
-
-  for (let i = 0; i < retrievedArray.length; i++) {
-    // console.log(retrievedArray[i]);
-    let x = retrievedArray[i];
-    if (x.newSelectStatus === "modalReview") {
-      let card = `<div id="${x.id}"><span><img src="./Resources/bluebox.png" alt=""></span>
-              <h3> ${x.newTaskName} </h3> 
-              <p class="taskDescriptionText"> ${x.newAddDescription} </p>
-              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
-              <hr> 
-              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
-      const newDiv = document.createElement("div");
-      cardsReview.insertAdjacentElement("beforeend", newDiv);
-      newDiv.classList.add("card1");
-
-      newDiv.addEventListener("click", () => {
-        editTasks(x.id), window.scrollTo(0, 0);
-      });
-
-      newDiv.innerHTML = card;
-    } else if (x.newSelectStatus === "modalToDo") {
-      let card = `<div id="${x.id}"><span><img src="./Resources/redbox.png" alt=""></span>
-              <h3> ${x.newTaskName} </h3> 
-              <p class="taskDescriptionText"> ${x.newAddDescription} </p>
-              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
-              <hr> 
-              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p> </div>`;
-      const newDiv = document.createElement("div");
-      cardsToDo.insertAdjacentElement("beforeend", newDiv);
-      newDiv.classList.add("card1");
-      newDiv.addEventListener("click", () => {
-        editTasks(x.id), window.scrollTo(0, 0);
-      });
-      newDiv.innerHTML = card;
-    } else if (x.newSelectStatus === "modalDone") {
-      let card = `<div id="${x.id}"><span><img src="./Resources/greenbox.png" alt=""></span>
-              <h3> ${x.newTaskName} </h3> 
-              <p class="taskDescriptionText"> ${x.newAddDescription} </p>
-              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
-              <hr> 
-              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
-      const newDiv = document.createElement("div");
-      cardsDone.insertAdjacentElement("beforeend", newDiv);
-      newDiv.classList.add("card1");
-      newDiv.addEventListener("click", () => {
-        editTasks(x.id), window.scrollTo(0, 0);
-      });
-      newDiv.innerHTML = card;
-    } else if (x.newSelectStatus === "modalInProgress") {
-      let card = `<div id="${x.id}"><span><img src="./Resources/yellowbox.png" alt=""></span>
-              <h3> ${x.newTaskName} </h3> 
-              <p class="taskDescriptionText"> ${x.newAddDescription} </p>
-              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
-              <hr> 
-              <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
-      const newDiv = document.createElement("div");
-      cardsinProgress.insertAdjacentElement("beforeend", newDiv);
-      newDiv.classList.add("card1");
-      newDiv.addEventListener("click", () => {
-        editTasks(x.id), window.scrollTo(0, 0);
-      });
-      newDiv.innerHTML = card;
-    }
+    uniqueID.style.display = 'none';
+  
+    taskNameEdit.value = a.newTaskName; //get existing here
+    assignedToEdit.value = a.newAssignTo; //get existing here
+    dueDateEdit.value = a.newDueDate;
+    setStatusEdit.value = a.newSelectStatus;
+    descriptionEdit.value = a.newAddDescription;
+    uniqueID.value = a.id;
+  
+  
+    modalBtnDel.addEventListener("click", () => {
+      localStorage.removeItem(a.id)
+      document.getElementById(a.id).style.display = 'none'
+      formDelete.style.display = "none";
+      modalOverlay.style.opacity = "1";
+      modalOverlay.style.backgroundColor = "transparent";
+      
+    });
+  
+    modalEditBtnSubmit.addEventListener("click", () => {
+      formDelete.style.display = "none";
+      modalOverlay.style.opacity = "1";
+      modalOverlay.style.backgroundColor = "transparent";
+      a.newTaskName = taskNameEdit.value;
+      a.newAssignTo = assignedToEdit.value;
+      a.newDueDate = dueDateEdit.value;
+      a.newSelectStatus = setStatusEdit.value;
+      a.newAddDescription = descriptionEdit.value;
+      localStorage.setItem(a.id, JSON.stringify(a));
+    });
   }
-}
+  
+  function renderRetrievedTasks() {
+  
+    for (let i = 0; i < retrievedArray.length; i++) {
+      // console.log(retrievedArray[i]);
+      let x = retrievedArray[i];
+      if (x.newSelectStatus === "modalReview") {
+        let card = `<div id="${x.id}"><span><img src="./Resources/bluebox.png" alt=""></span>
+                <h3> ${x.newTaskName} </h3> 
+                <p class="taskDescriptionText"> ${x.newAddDescription} </p>
+                <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+                <hr> 
+                <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
+        const newDiv = document.createElement("div");
+        cardsReview.insertAdjacentElement("beforeend", newDiv);
+        newDiv.classList.add("card1");
+  
+        newDiv.addEventListener("click", () => {
+          editTasks(x), window.scrollTo(0, 0);
+        });
+        
+        newDiv.innerHTML = card;
+      } else if (x.newSelectStatus === "modalToDo") {
+        let card = `<div id="${x.id}"><span><img src="./Resources/redbox.png" alt=""></span>
+                <h3> ${x.newTaskName} </h3> 
+                <p class="taskDescriptionText"> ${x.newAddDescription} </p>
+                <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+                <hr> 
+                <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p> </div>`;
+        const newDiv = document.createElement("div");
+        cardsToDo.insertAdjacentElement("beforeend", newDiv);
+        newDiv.classList.add("card1");
+        newDiv.addEventListener("click", () => {
+          editTasks(x), window.scrollTo(0, 0);
+        });
+        newDiv.innerHTML = card;
+      } else if (x.newSelectStatus === "modalDone") {
+        let card = `<div id="${x.id}"><span><img src="./Resources/greenbox.png" alt=""></span>
+                <h3> ${x.newTaskName} </h3> 
+                <p class="taskDescriptionText"> ${x.newAddDescription} </p>
+                <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+                <hr> 
+                <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
+        const newDiv = document.createElement("div");
+        cardsDone.insertAdjacentElement("beforeend", newDiv);
+        newDiv.classList.add("card1");
+        newDiv.addEventListener("click", () => {
+          editTasks(x), window.scrollTo(0, 0);
+        });
+        newDiv.innerHTML = card;
+      } else if (x.newSelectStatus === "modalInProgress") {
+        let card = `<div id="${x.id}"><span><img src="./Resources/yellowbox.png" alt=""></span>
+                <h3> ${x.newTaskName} </h3> 
+                <p class="taskDescriptionText"> ${x.newAddDescription} </p>
+                <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+                <hr> 
+                <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
+        const newDiv = document.createElement("div");
+        cardsinProgress.insertAdjacentElement("beforeend", newDiv);
+        newDiv.classList.add("card1");
+        newDiv.addEventListener("click", () => {
+          editTasks(x), window.scrollTo(0, 0);
+        });
+        newDiv.innerHTML = card;
+      }
+    }}
