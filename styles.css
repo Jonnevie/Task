@@ -214,14 +214,15 @@ background-color: #f1f1f1;
 }
 
 #modalBtnDel {
-float: right;
+/* float: right; */
 background-color: #e6585e;
 height: 100%;
 padding: 10px;
 color: white;
 border-radius: 10%;
 font-weight: bold;
-margin-top: 20px;
+margin: 5px 5px;
+
 /* margin-right: 15px; */
 }
 
@@ -231,14 +232,15 @@ margin-top: 20px;
 
 
 #modalEditBtnSubmit{
-float: right;
+/* float: right; */
 background-color: #4f82c4;
 height: 100%;
 padding: 10px;
+margin: 5px 5px;
 color: white;
 border-radius: 10%;
 font-weight: bold;
-margin-top: 20px;
+
 }
 
 #modalEditBtnSubmit:hover {
@@ -246,7 +248,7 @@ margin-top: 20px;
 }
 
 #modalBtn {
-float: right;
+/* float: right; */
 background-color: #4f82c4;
 height: 100%;
 padding: 10px;
@@ -258,16 +260,18 @@ margin-top: 20px;
 
 .button-flex {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  
 }
 #modalBtnDone {
   background-color: #8ac927;
   height: 100%;
   padding: 10px;
+  margin: 5px 5px;
   color: white;
   border-radius: 10%;
   font-weight: bold;
-  margin-top: 20px;
+
 }
 
 #modalBtn:hover {

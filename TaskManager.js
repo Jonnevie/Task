@@ -22,7 +22,6 @@ class TaskManager {
     newAddDescription,
     latestID
   ) {
-    this.taskArray = [];
     this.newTaskName = newTaskName;
     this.newAssignTo = newAssignTo;
     this.newDueDate = newDueDate;

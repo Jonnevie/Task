@@ -1,11 +1,11 @@
 import { TaskManager } from "./TaskManager.js";
 
 window.addEventListener("load", () => {
+  populateArray()
   renderRetrievedTasks();
   form.addEventListener("submit", (e) => {
     // e.preventDefault();
     extractData();
-
     // getAllTasks();
   });
 });
@@ -208,11 +208,12 @@ let retrievedArray = [];
 //   return retrievedArray;
 // }
 
-for (let i = 0; i < localStorage.length; i++) {
-  let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
-  retrievedArray.push(x);
-  // console.log(retrievedArray)
-}
+function populateArray(){
+  for (let i = 0; i < localStorage.length; i++) {
+    let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    retrievedArray.push(x);
+    // console.log(retrievedArray)
+  }}
 
 
   
@@ -251,6 +252,7 @@ for (let i = 0; i < localStorage.length; i++) {
       a.newSelectStatus = setStatusEdit.value;
       a.newAddDescription = descriptionEdit.value;
       localStorage.setItem(a.id, JSON.stringify(a));
+      location.reload(true)
     });
   }
   
