@@ -45,6 +45,7 @@ class TaskManager {
     newDiv.addEventListener("click", () => {
       editTask(this.id), window.scrollTo(0, 0);
     });
+    storeData();
     newDiv.innerHTML = card;
 
   }
@@ -64,6 +65,7 @@ class TaskManager {
     newDiv.addEventListener("click", () => {
       editTask(this.id), window.scrollTo(0, 0);
     });
+    storeData();
     newDiv.innerHTML = card;
 
   }
@@ -85,6 +87,7 @@ class TaskManager {
     newDiv.addEventListener("click", () => {
       editTask(this.id), window.scrollTo(0, 0);
     });
+    storeData();
     newDiv.innerHTML = card;
 
   }
@@ -104,6 +107,7 @@ class TaskManager {
     newDiv.addEventListener("click", () => {
       editTask(this.id), window.scrollTo(0, 0);
     });
+    storeData();
     newDiv.innerHTML = card;
 
   }
@@ -114,6 +118,9 @@ let retrievedArray = [];
 //   return retrievedArray;
 // }
 
+function storeData(){ 
+  localStorage.setItem(ourNewTask.id, JSON.stringify(ourNewTask));
+}
 
 for(let i=0; i < localStorage.length; i++) {
   let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
@@ -141,7 +148,7 @@ console.log(a);
       setStatusEdit.value = x.newSelectStatus;
       descriptionEdit.value = x.newAddDescription;
     } else {
-      alert ('HI') 
+      console.log('failed')
     }
   }
 }

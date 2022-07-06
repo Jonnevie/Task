@@ -215,7 +215,7 @@ retrievedArray.push(x)
   function renderRetrievedTasks() {
 
 
-  function editTask(a) {
+  function editTasks(a) {
     formDelete.style.display = "block";
     modalOverlay.style.opacity = "0.3";
     modalOverlay.style.backgroundColor = "gray";
@@ -253,7 +253,7 @@ retrievedArray.push(x)
     newDiv.classList.add("card1");
   
     newDiv.addEventListener("click", () => {
-      editTask(x.id), window.scrollTo(0, 0);
+      editTasks(x.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
 
@@ -269,7 +269,7 @@ retrievedArray.push(x)
     cardsToDo.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
-      editTask(x.id), window.scrollTo(0, 0);
+      editTasks(x.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
 
@@ -285,7 +285,7 @@ retrievedArray.push(x)
     cardsDone.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
-      editTask(x.id), window.scrollTo(0, 0);
+      editTasks(x.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
 
@@ -301,7 +301,7 @@ retrievedArray.push(x)
     cardsinProgress.insertAdjacentElement("beforeend", newDiv);
     newDiv.classList.add("card1");
     newDiv.addEventListener("click", () => {
-      editTask(x.id), window.scrollTo(0, 0);
+      editTasks(x.id), window.scrollTo(0, 0);
     });
     newDiv.innerHTML = card;
       }
@@ -309,5 +309,3 @@ retrievedArray.push(x)
 
  
   }
-
-
