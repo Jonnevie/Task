@@ -8,6 +8,8 @@ let assignedToEdit = document.getElementById("assignedToEdit");
 let dueDateEdit = document.getElementById("dueDateEdit");
 let descriptionEdit = document.getElementById("descriptionEdit");
 let setStatusEdit = document.getElementById("setStatusEdit");
+let modalBtnDel = document.getElementById('modalBtnDel')
+let uniqueID = document.getElementById('uniqueID');
 
 //class constructor
 class TaskManager {
@@ -134,6 +136,7 @@ function editTask(a) {
   formDelete.style.display = "block";
   modalOverlay.style.opacity = "0.3";
   modalOverlay.style.backgroundColor = "gray";
+  uniqueID.style.display = 'none';
 console.log(a);
 
   for (let i = 0; i < retrievedArray.length; i++) {
@@ -147,11 +150,30 @@ console.log(a);
       dueDateEdit.value = x.newDueDate;
       setStatusEdit.value = x.newSelectStatus;
       descriptionEdit.value = x.newAddDescription;
-    } else {
-      console.log('failed')
-    }
+      uniqueID.value = x.id;
+    } 
+
   }
+modalBtnDel.addEventListener("click", () => {
+  formDelete.style.display = "none";
+  modalOverlay.style.opacity = "1";
+  modalOverlay.style.backgroundColor = "transparent";
+
+  for (let i = 0; i < retrievedArray.length; i++) {
+    let x = retrievedArray[i];
+    // console.log(x.id);
+    // console.log(taskNameEdit.value);
+    // console.log(taskNameEdit.value);
+    if (x.id == uniqueID.value) {
+      return window.localStorage.removeItem(x.id);
+    } 
+  }
+
+ 
+});
+
 }
+
 
 console.log(retrievedArray)
 export { TaskManager };
