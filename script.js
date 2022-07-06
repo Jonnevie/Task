@@ -5,6 +5,7 @@ window.addEventListener("load", () => {
   form.addEventListener("submit", (e) => {
     // e.preventDefault();
     extractData();
+
     // getAllTasks();
   });
 });
@@ -64,7 +65,8 @@ let dueDateEdit = document.getElementById("dueDateEdit");
 let descriptionEdit = document.getElementById("descriptionEdit");
 let setStatusEdit = document.getElementById("setStatusEdit");
 let modalBtnDel = document.getElementById("modalBtnDel");
-let uniqueID = document.getElementById('uniqueID');
+let uniqueID = document.getElementById("uniqueID");
+let modalEditBtnSubmit = document.getElementById("modalEditBtnSubmit");
 
 //Click events
 btn.onclick = function () {
@@ -134,7 +136,7 @@ dueDate.addEventListener("click", function () {
 });
 
 function resetFormClearModal() {
-  form.reset();
+  // form.reset();
   modal.style.display = "none";
   modalOverlay.style.opacity = "1";
   modalOverlay.style.backgroundColor = "transparent";
@@ -164,6 +166,8 @@ function extractData() {
     ourNewTask.renderToDo();
     resetFormClearModal();
     addToArray();
+ 
+
     // console.log(toDoItems);
   }
   if (formValidated === true && setStatus.value === "modalInProgress") {
@@ -172,6 +176,7 @@ function extractData() {
     ourNewTask.renderInProgress();
     resetFormClearModal();
     addToArray();
+
   }
   if (formValidated === true && setStatus.value === "modalReview") {
     reviewItems.push(ourNewTask);
@@ -179,6 +184,8 @@ function extractData() {
     ourNewTask.renderReview();
     resetFormClearModal();
     addToArray();
+ 
+
   }
   if (formValidated === true && setStatus.value === "modalDone") {
     doneItems.push(ourNewTask);
@@ -186,6 +193,8 @@ function extractData() {
     ourNewTask.renderDone();
     resetFormClearModal();
     addToArray();
+
+
   }
   function addToArray() {
     let myID = latestID.at(-1);
@@ -206,16 +215,22 @@ for (let i = 0; i < localStorage.length; i++) {
 }
 
 function renderRetrievedTasks() {
+  
+function refresh() {
+  window.location.reload();
+}
+
   function editTasks(a) {
+    
     formDelete.style.display = "block";
     modalOverlay.style.opacity = "0.3";
     modalOverlay.style.backgroundColor = "gray";
-    uniqueID.style.display = 'none';
-
+    uniqueID.style.display = "none";
+    // location.reload();  //RELOADS HERE!!!
     for (let i = 0; i < retrievedArray.length; i++) {
       //here is where we would put our condition if id
       let x = retrievedArray[i];
-
+      // location.reload();  RELOADS HERE!!!
       if (x.id === a) {
         taskNameEdit.value = x.newTaskName; //get existing here
         assignedToEdit.value = x.newAssignTo; //get existing here
@@ -224,32 +239,61 @@ function renderRetrievedTasks() {
         descriptionEdit.value = x.newAddDescription;
         uniqueID.value = x.id;
 
+        modalBtnDel.addEventListener("click", () => {
+          // location.reload(); DOESNT RELOAD HERE
+          formDelete.style.display = "none";
+          modalOverlay.style.opacity = "1";
+          modalOverlay.style.backgroundColor = "transparent";
+          
+          for (let i = 0; i < retrievedArray.length; i++) {
+            let x = retrievedArray[i];
+            console.log(x.id);
+            // console.log(taskNameEdit.value);
+            // console.log(taskNameEdit.value);
+            if (x.id == uniqueID.value) {
+              window.localStorage.removeItem(x.id);
+              document.getElementById(`${x.id}`).style.display = "none";
+            }
+          }
+          setTimeout(refresh,500);
+        });
 
-modalBtnDel.addEventListener("click", () => {
-    formDelete.style.display = "none";
-    modalOverlay.style.opacity = "1";
-    modalOverlay.style.backgroundColor = "transparent";
- 
-    for (let i = 0; i < retrievedArray.length; i++) {
-      let x = retrievedArray[i];
-      // console.log(x.id);
-      // console.log(taskNameEdit.value);
-      // console.log(taskNameEdit.value);
-      if (x.id == uniqueID.value) {
-        return window.localStorage.removeItem(x.id);
-      } 
-    }
-  });
+        modalEditBtnSubmit.addEventListener("click", () => {
+          formDelete.style.display = "none";
+          modalOverlay.style.opacity = "1";
+          modalOverlay.style.backgroundColor = "transparent";
 
-      }
+          for (let i = 0; i < retrievedArray.length; i++) {
+            let x = retrievedArray[i];
+            console.log(x.id);
+            console.log(uniqueID.value);
+            if (x.id === uniqueID.value) {
+              x.newTaskName = taskNameEdit.value;
+              x.newAssignTo = assignedToEdit.value;
+              x.newDueDate = dueDateEdit.value;
+              x.newSelectStatus = setStatusEdit.value;
+              x.newAddDescription = descriptionEdit.value;
+              uniqueID.value = x.id;
+              localStorage.setItem(ourNewTask.id, JSON.stringify(x));
+              
+            }};
 
+            // let ourNewTask = new TaskManager(
+            //   taskName.value,
+            //   assignedTo.value,
+            //   dueDate.value,
+            //   setStatus.value,
+            //   description.value,
+            //   latestID.at(-1)
+            // );
 
-
-
-    }
-  }
-
-  
+            // function storeData() {
+            //   localStorage.setItem(ourNewTask.id, JSON.stringify(ourNewTask));
+            // }
+          
+        
+      })
+      }}}
 
   for (let i = 0; i < retrievedArray.length; i++) {
     // console.log(retrievedArray[i]);
@@ -268,7 +312,7 @@ modalBtnDel.addEventListener("click", () => {
       newDiv.addEventListener("click", () => {
         editTasks(x.id), window.scrollTo(0, 0);
       });
-      
+
       newDiv.innerHTML = card;
     } else if (x.newSelectStatus === "modalToDo") {
       let card = `<div id="${x.id}"><span><img src="./Resources/redbox.png" alt=""></span>

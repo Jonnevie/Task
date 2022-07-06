@@ -10,6 +10,7 @@ let descriptionEdit = document.getElementById("descriptionEdit");
 let setStatusEdit = document.getElementById("setStatusEdit");
 let modalBtnDel = document.getElementById('modalBtnDel')
 let uniqueID = document.getElementById('uniqueID');
+let modalEditBtnSubmit = document.getElementById('modalEditBtnSubmit');
 
 //class constructor
 class TaskManager {
@@ -29,7 +30,9 @@ class TaskManager {
     this.newAddDescription = newAddDescription;
     this.id = latestID;
   }
-
+refresh(){
+  return location.reload();
+}
   renderDone() {
     const newDiv = document.createElement("div");
     let card = `<div id="${this.id}">
@@ -50,6 +53,8 @@ class TaskManager {
     storeData();
     newDiv.innerHTML = card;
 
+
+
   }
 
   renderReview() {
@@ -69,6 +74,8 @@ class TaskManager {
     });
     storeData();
     newDiv.innerHTML = card;
+
+
 
   }
 
@@ -91,6 +98,8 @@ class TaskManager {
     });
     storeData();
     newDiv.innerHTML = card;
+ 
+
 
   }
 
@@ -111,6 +120,8 @@ class TaskManager {
     });
     storeData();
     newDiv.innerHTML = card;
+    
+
 
   }
 };
@@ -133,6 +144,7 @@ retrievedArray.push(x)
 
 
 function editTask(a) {
+
   formDelete.style.display = "block";
   modalOverlay.style.opacity = "0.3";
   modalOverlay.style.backgroundColor = "gray";
@@ -164,16 +176,44 @@ modalBtnDel.addEventListener("click", () => {
     // console.log(x.id);
     // console.log(taskNameEdit.value);
     // console.log(taskNameEdit.value);
+    console.log(x.id)
     if (x.id == uniqueID.value) {
-      return window.localStorage.removeItem(x.id);
+    localStorage.removeItem(x.id);
+    document.getElementById(`${x.id}`).style.display = "none";
+    
+    // window.location.reload();
+    console.log('hello')
     } 
   }
 
  
 });
 
+modalEditBtnSubmit.addEventListener('click', () => {
+  formDelete.style.display = "none";
+  modalOverlay.style.opacity = "1";
+  modalOverlay.style.backgroundColor = "transparent";
+
+  for (let i = 0; i < retrievedArray.length; i++) {
+    let x = retrievedArray[i];
+    console.log(x.newTaskName)
+    if(x.id ===uniqueID.value) {
+      x.newTaskName = taskNameEdit.value; 
+      x.newAssignTo = assignedToEdit.value; 
+      dueDateEdit.value = x.newDueDate;
+      setStatusEdit.value = x.newSelectStatus;
+      descriptionEdit.value = x.newAddDescription;
+      uniqueID.value = x.id;
+    }
+    
+
+  }
+})
+
+
+
 }
 
 
-console.log(retrievedArray)
+// console.log(retrievedArray)
 export { TaskManager };
