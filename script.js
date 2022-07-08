@@ -4,7 +4,7 @@ let latestID = 0;
 
 window.addEventListener("load", () => {
   populateArray();
-  populateIDArray();
+  if (localStorage.length > 0) {populateIDArray()};
   renderRetrievedTasks();
   form.addEventListener("submit", (e) => {
     // e.preventDefault();
@@ -146,6 +146,7 @@ const retrievedArray = [];
 function populateArray(){
   for (let i = 0; i < localStorage.length; i++) {
     let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    console.log(x);
     if (typeof x == "object"){
     retrievedArray.push(x);}
     // console.log(retrievedArray)
@@ -159,18 +160,7 @@ function populateIDArray(){
   console.log(latestID);
   localStorage.setItem('latestID',latestID);
 }
-// const idArray = retrievedArray.map(myFunction);
 
-// function myFunction(obj) {
-//   return obj.id;
-// }
-
-// console.log(idArray);
-
-
-// let latestID = [Math.max(localStorage.length)];
-
-// console.log(localStorage.length)
 function extractData() {
   let ourNewTask = new TaskManager(
     taskName.value,
@@ -211,10 +201,6 @@ function extractData() {
 
 }
 
-
-
-
-  
 
 
   function editTasks(a) {

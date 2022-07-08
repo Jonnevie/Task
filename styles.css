@@ -419,9 +419,9 @@ position: absolute; /* Stay in place */
 z-index: 2; /* Sit on top */
 left: 50%;
 top: 30%;
-margin-left: -150px;
-margin-top: -150px;
-width: 300px;
+margin-left: -175px;
+margin-top: -175px;
+width: 350px;
 height: max-content; 
 background-color: white; 
 padding: 20px;
