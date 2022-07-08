@@ -1,12 +1,14 @@
 import { TaskManager } from "./TaskManager.js";
 
+let latestID = 0;
+
 window.addEventListener("load", () => {
-  populateArray()
+  populateArray();
+  populateIDArray();
   renderRetrievedTasks();
   form.addEventListener("submit", (e) => {
     // e.preventDefault();
     extractData();
-    // getAllTasks();
   });
 });
 
@@ -46,12 +48,6 @@ var span = document.getElementById("closebtn");
 let dueDate = document.getElementById("dueDate");
 let formDelete = document.getElementById("formDelete");
 let closebtnedit = document.getElementById("closebtnedit");
-let card1 = document.getElementsByClassName("card1");
-let toDoItems = [];
-let inProgressItems = [];
-let reviewItems = [];
-let doneItems = [];
-let modalBtn = document.getElementById("modalBtn");
 let cardsToDo = document.getElementById("cardsToDo");
 let cardsinProgress = document.getElementById("cardsinProgress");
 let cardsReview = document.getElementById("cardsReview");
@@ -142,8 +138,37 @@ function resetFormClearModal() {
   modalOverlay.style.backgroundColor = "transparent";
   formValidated = false;
 }
+const retrievedArray = [];
+// function getAllTasks(){
+//   return retrievedArray;
+// }
 
-let latestID = [Math.max(localStorage.length)];
+function populateArray(){
+  for (let i = 0; i < localStorage.length; i++) {
+    let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
+    if (typeof x == "object"){
+    retrievedArray.push(x);}
+    // console.log(retrievedArray)
+  }}
+console.log(retrievedArray);
+
+function populateIDArray(){
+  const idArray = retrievedArray.map((obj) => {return obj.id})
+  console.log(idArray);
+  latestID = Math.max(...idArray);
+  console.log(latestID);
+  localStorage.setItem('latestID',latestID);
+}
+// const idArray = retrievedArray.map(myFunction);
+
+// function myFunction(obj) {
+//   return obj.id;
+// }
+
+// console.log(idArray);
+
+
+// let latestID = [Math.max(localStorage.length)];
 
 // console.log(localStorage.length)
 function extractData() {
@@ -153,7 +178,7 @@ function extractData() {
     dueDate.value,
     setStatus.value,
     description.value,
-    latestID.at(-1)
+    latestID + 1
   );
 
   function storeData() {
@@ -161,59 +186,32 @@ function extractData() {
   }
 
   if (formValidated === true && setStatus.value === "modalToDo") {
-    toDoItems.push(ourNewTask);
     storeData();
     ourNewTask.renderToDo();
     resetFormClearModal();
-    addToArray();
- 
-
-    // console.log(toDoItems);
   }
+
   if (formValidated === true && setStatus.value === "modalInProgress") {
-    inProgressItems.push(ourNewTask);
     storeData();
     ourNewTask.renderInProgress();
     resetFormClearModal();
-    addToArray();
-
   }
+
   if (formValidated === true && setStatus.value === "modalReview") {
-    reviewItems.push(ourNewTask);
     storeData();
     ourNewTask.renderReview();
     resetFormClearModal();
-    addToArray();
- 
-
   }
+
   if (formValidated === true && setStatus.value === "modalDone") {
-    doneItems.push(ourNewTask);
     storeData();
     ourNewTask.renderDone();
     resetFormClearModal();
-    addToArray();
-
-
   }
-  function addToArray() {
-    let myID = latestID.at(-1);
-    myID++;
-    latestID.push(myID);
-  }
+
 }
 
-let retrievedArray = [];
-// function getAllTasks(){
-//   return retrievedArray;
-// }
 
-function populateArray(){
-  for (let i = 0; i < localStorage.length; i++) {
-    let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
-    retrievedArray.push(x);
-    // console.log(retrievedArray)
-  }}
 
 
   

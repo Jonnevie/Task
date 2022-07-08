@@ -135,6 +135,7 @@ function storeData(){
 }
 
 for(let i=0; i < localStorage.length; i++) {
+  console.log(localStorage.key(i));
   let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
 retrievedArray.push(x)
 }
