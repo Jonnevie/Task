@@ -180,7 +180,7 @@ modalBtnDel.addEventListener("click", () => {
     if (x.id == uniqueID.value) {
     localStorage.removeItem(x.id);
     document.getElementById(`${x.id}`).style.display = "none";
-    
+    resetFormClearModal();
     // window.location.reload();
     console.log('hello')
     } 

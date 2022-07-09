@@ -83,6 +83,7 @@ closebtnedit.onclick = function () {
   modalOverlay.style.opacity = "1";
   modalOverlay.style.backgroundColor = "transparent";
   underModal.style.pointerEvents = 'auto';
+  resetFormClearModal();
 };
 mobileAddTaskBtn.onclick = function () {
   modal.style.display = "block";
@@ -138,6 +139,7 @@ function resetFormClearModal() {
   modal.style.display = "none";
   modalOverlay.style.opacity = "1";
   modalOverlay.style.backgroundColor = "transparent";
+  location.reload();
   formValidated = false;
 }
 const retrievedArray = [];
@@ -265,7 +267,16 @@ function editTasks(a) {
     underModal.style.pointerEvents = 'auto';
     location.reload();
     resetFormClearModal();
-  })
+  });
+
+  
+  closebtnedit.onclick = function () {
+    formDelete.style.display = "none";
+    modalOverlay.style.opacity = "1";
+    modalOverlay.style.backgroundColor = "transparent";
+    underModal.style.pointerEvents = 'auto';
+    resetFormClearModal();
+  };
 }
 
 
