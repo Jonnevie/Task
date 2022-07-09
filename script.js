@@ -1,10 +1,10 @@
 import { TaskManager } from "./TaskManager.js";
 
 let latestID = 0;
-const firstObject = {id: 0, message: "This is just a placeholder"};
+const firstObject = { id: 0, message: "This is just a placeholder" };
 
 window.addEventListener("load", () => {
-  localStorage.setItem(0,JSON.stringify(firstObject));
+  localStorage.setItem(0, JSON.stringify(firstObject));
   populateArray();
   populateIDArray();
   renderRetrievedTasks();
@@ -81,14 +81,13 @@ closebtnedit.onclick = function () {
   formDelete.style.display = "none";
   modalOverlay.style.opacity = "1";
   modalOverlay.style.backgroundColor = "transparent";
+  underModal.style.pointerEvents = 'auto';
 };
 mobileAddTaskBtn.onclick = function () {
   modal.style.display = "block";
   modalOverlay.style.opacity = "0.3";
   modalOverlay.style.backgroundColor = "gray";
 };
-
-modalBtnDone.onclick = function () {};
 
 //Validating the form fields
 
@@ -145,22 +144,26 @@ const retrievedArray = [];
 //   return retrievedArray;
 // }
 
-function populateArray(){
+function populateArray() {
   for (let i = 0; i < localStorage.length; i++) {
     let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
     console.log(x);
-    if (typeof x == "object"){
-    retrievedArray.push(x);}
+    if (typeof x == "object") {
+      retrievedArray.push(x);
+    }
     // console.log(retrievedArray)
-  }}
+  }
+}
 console.log(retrievedArray);
 
-function populateIDArray(){
-  const idArray = retrievedArray.map((obj) => {return obj.id})
+function populateIDArray() {
+  const idArray = retrievedArray.map((obj) => {
+    return obj.id;
+  });
   console.log(idArray);
   latestID = Math.max(...idArray);
   console.log(latestID);
-  localStorage.setItem('latestID',latestID);
+  localStorage.setItem("latestID", latestID);
 }
 
 function extractData() {
@@ -200,110 +203,123 @@ function extractData() {
     ourNewTask.renderDone();
     resetFormClearModal();
   }
+}
+let underModal = document.getElementById('underModal');
+function editTasks(a) {
+  formDelete.style.display = "block";
+  modalOverlay.style.opacity = "0.3";
+  modalOverlay.style.backgroundColor = "gray";
+  uniqueID.style.display = "none";
+  underModal.style.pointerEvents = 'none';
 
+  taskNameEdit.value = a.newTaskName; //get existing here
+  assignedToEdit.value = a.newAssignTo; //get existing here
+  dueDateEdit.value = a.newDueDate;
+  setStatusEdit.value = a.newSelectStatus;
+  descriptionEdit.value = a.newAddDescription;
+  uniqueID.value = a.id;
+
+  if( setStatusEdit.value == "modalDone"){
+    modalBtnDone.style.display = 'none';
+  }
+
+  modalBtnDel.addEventListener("click", () => {
+    localStorage.removeItem(a.id);
+    document.getElementById(a.id).style.display = "none";
+    formDelete.style.display = "none";
+    modalOverlay.style.opacity = "1";
+    modalOverlay.style.backgroundColor = "transparent";
+    underModal.style.pointerEvents = 'auto';
+  });
+
+  modalEditBtnSubmit.addEventListener("click", () => {
+    formDelete.style.display = "none";
+    modalOverlay.style.opacity = "1";
+    modalOverlay.style.backgroundColor = "transparent";
+    a.newTaskName = taskNameEdit.value;
+    a.newAssignTo = assignedToEdit.value;
+    a.newDueDate = dueDateEdit.value;
+    a.newSelectStatus = setStatusEdit.value;
+    a.newAddDescription = descriptionEdit.value;
+    localStorage.setItem(a.id, JSON.stringify(a));
+    underModal.style.pointerEvents = 'auto';
+    location.reload(true);
+  });
+
+  modalBtnDone.addEventListener('click', function() {
+    formDelete.style.display = "none";
+    modalOverlay.style.opacity = "1";
+    modalOverlay.style.backgroundColor = "transparent";
+    console.log(a.newSelectStatus);
+    a.newSelectStatus = setStatus.value = "modalDone";
+    localStorage.setItem(a.id , JSON.stringify(a));
+    underModal.style.pointerEvents = 'auto';
+    location.reload();
+  })
 }
 
-
-
-  function editTasks(a) {
-    formDelete.style.display = "block";
-    modalOverlay.style.opacity = "0.3";
-    modalOverlay.style.backgroundColor = "gray";
-    uniqueID.style.display = 'none';
-  
-    taskNameEdit.value = a.newTaskName; //get existing here
-    assignedToEdit.value = a.newAssignTo; //get existing here
-    dueDateEdit.value = a.newDueDate;
-    setStatusEdit.value = a.newSelectStatus;
-    descriptionEdit.value = a.newAddDescription;
-    uniqueID.value = a.id;
-  
-  
-    modalBtnDel.addEventListener("click", () => {
-      localStorage.removeItem(a.id)
-      document.getElementById(a.id).style.display = 'none'
-      formDelete.style.display = "none";
-      modalOverlay.style.opacity = "1";
-      modalOverlay.style.backgroundColor = "transparent";
-      
-    });
-  
-    modalEditBtnSubmit.addEventListener("click", () => {
-      formDelete.style.display = "none";
-      modalOverlay.style.opacity = "1";
-      modalOverlay.style.backgroundColor = "transparent";
-      a.newTaskName = taskNameEdit.value;
-      a.newAssignTo = assignedToEdit.value;
-      a.newDueDate = dueDateEdit.value;
-      a.newSelectStatus = setStatusEdit.value;
-      a.newAddDescription = descriptionEdit.value;
-      localStorage.setItem(a.id, JSON.stringify(a));
-      location.reload(true)
-    });
-  }
-  
-  function renderRetrievedTasks() {
-  
-    for (let i = 0; i < retrievedArray.length; i++) {
-      // console.log(retrievedArray[i]);
-      let x = retrievedArray[i];
-      if (x.newSelectStatus === "modalReview") {
-        let card = `<div id="${x.id}"><span><img src="./Resources/bluebox.png" alt=""></span>
+function renderRetrievedTasks() {
+  for (let i = 0; i < retrievedArray.length; i++) {
+    // console.log(retrievedArray[i]);
+    let x = retrievedArray[i];
+    if (x.newSelectStatus === "modalReview") {
+      let card = `<div id="${x.id}"><span><img src="./Resources/bluebox.png" alt=""></span>
                 <h3> ${x.newTaskName} </h3> 
                 <p class="taskDescriptionText"> ${x.newAddDescription} </p>
                 <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
                 <hr> 
                 <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
-        const newDiv = document.createElement("div");
-        cardsReview.insertAdjacentElement("beforeend", newDiv);
-        newDiv.classList.add("card1");
-  
-        newDiv.addEventListener("click", () => {
-          editTasks(x), window.scrollTo(0, 0);
-        });
-        
-        newDiv.innerHTML = card;
-      } else if (x.newSelectStatus === "modalToDo") {
-        let card = `<div id="${x.id}"><span><img src="./Resources/redbox.png" alt=""></span>
+      const newDiv = document.createElement("div");
+      cardsReview.insertAdjacentElement("beforeend", newDiv);
+      newDiv.classList.add("card1");
+
+      newDiv.addEventListener("click", () => {
+        editTasks(x), window.scrollTo(0, 0);
+      });
+
+      newDiv.innerHTML = card;
+    } else if (x.newSelectStatus === "modalToDo") {
+      let card = `<div id="${x.id}"><span><img src="./Resources/redbox.png" alt=""></span>
                 <h3> ${x.newTaskName} </h3> 
                 <p class="taskDescriptionText"> ${x.newAddDescription} </p>
                 <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
                 <hr> 
                 <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p> </div>`;
-        const newDiv = document.createElement("div");
-        cardsToDo.insertAdjacentElement("beforeend", newDiv);
-        newDiv.classList.add("card1");
-        newDiv.addEventListener("click", () => {
-          editTasks(x), window.scrollTo(0, 0);
-        });
-        newDiv.innerHTML = card;
-      } else if (x.newSelectStatus === "modalDone") {
-        let card = `<div id="${x.id}"><span><img src="./Resources/greenbox.png" alt=""></span>
+      const newDiv = document.createElement("div");
+      cardsToDo.insertAdjacentElement("beforeend", newDiv);
+      newDiv.classList.add("card1");
+      newDiv.addEventListener("click", () => {
+        editTasks(x), window.scrollTo(0, 0);
+      });
+      newDiv.innerHTML = card;
+    } else if (x.newSelectStatus === "modalDone") {
+      let card = `<div id="${x.id}"><span><img src="./Resources/greenbox.png" alt=""></span>
                 <h3> ${x.newTaskName} </h3> 
                 <p class="taskDescriptionText"> ${x.newAddDescription} </p>
                 <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
                 <hr> 
                 <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
-        const newDiv = document.createElement("div");
-        cardsDone.insertAdjacentElement("beforeend", newDiv);
-        newDiv.classList.add("card1");
-        newDiv.addEventListener("click", () => {
-          editTasks(x), window.scrollTo(0, 0);
-        });
-        newDiv.innerHTML = card;
-      } else if (x.newSelectStatus === "modalInProgress") {
-        let card = `<div id="${x.id}"><span><img src="./Resources/yellowbox.png" alt=""></span>
+      const newDiv = document.createElement("div");
+      cardsDone.insertAdjacentElement("beforeend", newDiv);
+      newDiv.classList.add("card1");
+      newDiv.addEventListener("click", () => {
+        editTasks(x), window.scrollTo(0, 0);
+      });
+      newDiv.innerHTML = card;
+    } else if (x.newSelectStatus === "modalInProgress") {
+      let card = `<div id="${x.id}"><span><img src="./Resources/yellowbox.png" alt=""></span>
                 <h3> ${x.newTaskName} </h3> 
                 <p class="taskDescriptionText"> ${x.newAddDescription} </p>
                 <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
                 <hr> 
                 <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
-        const newDiv = document.createElement("div");
-        cardsinProgress.insertAdjacentElement("beforeend", newDiv);
-        newDiv.classList.add("card1");
-        newDiv.addEventListener("click", () => {
-          editTasks(x), window.scrollTo(0, 0);
-        });
-        newDiv.innerHTML = card;
-      }
-    }}
+      const newDiv = document.createElement("div");
+      cardsinProgress.insertAdjacentElement("beforeend", newDiv);
+      newDiv.classList.add("card1");
+      newDiv.addEventListener("click", () => {
+        editTasks(x), window.scrollTo(0, 0);
+      });
+      newDiv.innerHTML = card;
+    }
+  }
+}
