@@ -78,6 +78,8 @@ html {
   cursor: pointer;
   background-color: #3f689d;
   color: white;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
 
@@ -124,20 +126,28 @@ html {
 
 #toDoHeading {
   border-bottom: 6px solid #e6585e;
+  border-bottom-left-radius:5px ;
+  border-bottom-right-radius: 5px;
 }
 #inProgressHeading {
   border-bottom: 6px solid #efca3c;
+  border-bottom-left-radius:5px ;
+  border-bottom-right-radius: 5px;
 }
 #reviewHeading {
   border-bottom: 6px solid #4f82c4;
+  border-bottom-left-radius:5px ;
+  border-bottom-right-radius: 5px;
 }
 #doneHeading {
   border-bottom: 6px solid #8ac927;
+  border-bottom-left-radius:5px ;
+  border-bottom-right-radius: 5px;
 }
 .card1 {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   margin: 25px;
-  border-radius: 5%;
+  border-radius: 3%;
 
 }
 
