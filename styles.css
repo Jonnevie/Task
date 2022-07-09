@@ -248,7 +248,7 @@ font-weight: bold;
 }
 
 #modalBtn {
-/* float: right; */
+float: right;
 background-color: #4f82c4;
 height: 100%;
 padding: 10px;
@@ -259,7 +259,7 @@ margin-top: 20px;
 }
 
 .button-flex {
-  display: flex;
+  display: flex !important;
   align-items: center;
   
 }
