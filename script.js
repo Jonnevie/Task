@@ -230,6 +230,7 @@ function editTasks(a) {
     modalOverlay.style.opacity = "1";
     modalOverlay.style.backgroundColor = "transparent";
     underModal.style.pointerEvents = 'auto';
+    resetFormClearModal();
   });
 
   modalEditBtnSubmit.addEventListener("click", () => {
@@ -244,6 +245,7 @@ function editTasks(a) {
     localStorage.setItem(a.id, JSON.stringify(a));
     underModal.style.pointerEvents = 'auto';
     location.reload(true);
+    resetFormClearModal();
   });
 
   modalBtnDone.addEventListener('click', function() {
@@ -255,6 +257,7 @@ function editTasks(a) {
     localStorage.setItem(a.id , JSON.stringify(a));
     underModal.style.pointerEvents = 'auto';
     location.reload();
+    resetFormClearModal();
   })
 }
 
