@@ -16,29 +16,29 @@ let modalEditBtnSubmit = document.getElementById('modalEditBtnSubmit');
 class TaskManager {
   constructor(
     newTaskName,
-    newAssignTo,
+    newAssignTo, 
     newDueDate,
     newSelectStatus,
     newAddDescription,
-    latestID
+    latestID,
+    newAssignToURL
   ) {
     this.newTaskName = newTaskName;
     this.newAssignTo = newAssignTo;
     this.newDueDate = newDueDate;
     this.newSelectStatus = newSelectStatus;
     this.newAddDescription = newAddDescription;
-    this.id = latestID;
+    this.id = latestID;    
+    this.assignedToURL = newAssignToURL;
   }
-refresh(){
-  return location.reload();
-}
+
   renderDone() {
     const newDiv = document.createElement("div");
     let card = `<div id="${this.id}">
       <span><img src="./Resources/greenbox.png" alt=""></span>
       <h3 class="cardTitle"> ${taskName.value} </h3> 
       <p class="taskDescriptionText"> ${description.value} </p>
-      <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+      <img class= "profileCard" src=${this.assignedToURL}> 
       <hr> 
       <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p>
       </div>`
@@ -61,7 +61,7 @@ refresh(){
     <span><img src="./Resources/bluebox.png" alt=""></span>
               <h3 class="cardTitle"> ${taskName.value} </h3> 
               <p class="taskDescriptionText"> ${description.value} </p>
-              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+              <img class= "profileCard" src=${this.assignedToURL}> 
               <hr> 
               <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p></div>`;
               console.log(card);
@@ -83,7 +83,7 @@ refresh(){
     <span><img src="./Resources/redbox.png" alt=""></span>
               <h3 class="cardTitle"> ${taskName.value} </h3> 
               <p class="taskDescriptionText"> ${description.value} </p>
-              <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+              <img class= "profileCard" src=${this.assignedToURL}> 
               <hr> 
               <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p></div>`;
               console.log(card);
@@ -107,7 +107,7 @@ refresh(){
     <span><img src="./Resources/yellowbox.png" alt=""></span>
   <h3 class="cardTitle"> ${taskName.value} </h3> 
   <p class="taskDescriptionText"> ${description.value} </p>
-  <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+  <img class= "profileCard" src=${this.assignedToURL}> 
   <hr> 
   <p class="dueDateText"><strong>DUE:</strong><span>${dueDate.value}</span></p></div>`;
   console.log(card);  

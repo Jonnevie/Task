@@ -76,6 +76,7 @@ span.onclick = function () {
   modal.style.display = "none";
   modalOverlay.style.opacity = "1";
   modalOverlay.style.backgroundColor = "transparent";
+  resetFormClearModal();
 };
 closebtnedit.onclick = function () {
   formDelete.style.display = "none";
@@ -147,7 +148,7 @@ const retrievedArray = [];
 function populateArray() {
   for (let i = 0; i < localStorage.length; i++) {
     let x = JSON.parse(localStorage.getItem(localStorage.key(i)));
-    console.log(x);
+    // console.log(x);
     if (typeof x == "object") {
       retrievedArray.push(x);
     }
@@ -166,6 +167,8 @@ function populateIDArray() {
   localStorage.setItem("latestID", latestID);
 }
 
+
+
 function extractData() {
   let ourNewTask = new TaskManager(
     taskName.value,
@@ -173,8 +176,10 @@ function extractData() {
     dueDate.value,
     setStatus.value,
     description.value,
-    latestID + 1
+    latestID + 1,
+    // assignedToURL
   );
+
 
   function storeData() {
     localStorage.setItem(ourNewTask.id, JSON.stringify(ourNewTask));
@@ -206,6 +211,8 @@ function extractData() {
 }
 let underModal = document.getElementById('underModal');
 function editTasks(a) {
+
+  
   formDelete.style.display = "block";
   modalOverlay.style.opacity = "0.3";
   modalOverlay.style.backgroundColor = "gray";
@@ -261,15 +268,38 @@ function editTasks(a) {
   })
 }
 
+
+
+
+
+
+
 function renderRetrievedTasks() {
+
+  let assignedToURL = "";
+  function choosePhoto(x){
+    if (x.newAssignTo == "Jonnevie"){
+   assignedToURL = "./Resources/ProfileUser4.png"
+  } else if (x.newAssignTo == "Seb") {
+     assignedToURL = "./Resources/ProfileUser3.png"
+  } else if (x.newAssignTo == "Betty") {
+     assignedToURL = "./Resources/ProfileUser2.png"
+  } else if (x.newAssignTo == "Pooja") {
+     assignedToURL = "./Resources/ProfileUser1.png"
+  } else {
+    console.log('user doesnt exist')
+  }
+  }
+
   for (let i = 0; i < retrievedArray.length; i++) {
     // console.log(retrievedArray[i]);
     let x = retrievedArray[i];
+    choosePhoto(x);
     if (x.newSelectStatus === "modalReview") {
       let card = `<div id="${x.id}"><span><img src="./Resources/bluebox.png" alt=""></span>
                 <h3> ${x.newTaskName} </h3> 
                 <p class="taskDescriptionText"> ${x.newAddDescription} </p>
-                <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+                <img class= "profileCard" src=${assignedToURL}> 
                 <hr> 
                 <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
       const newDiv = document.createElement("div");
@@ -285,7 +315,7 @@ function renderRetrievedTasks() {
       let card = `<div id="${x.id}"><span><img src="./Resources/redbox.png" alt=""></span>
                 <h3> ${x.newTaskName} </h3> 
                 <p class="taskDescriptionText"> ${x.newAddDescription} </p>
-                <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+                <img class= "profileCard" src=${assignedToURL}> 
                 <hr> 
                 <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p> </div>`;
       const newDiv = document.createElement("div");
@@ -299,7 +329,7 @@ function renderRetrievedTasks() {
       let card = `<div id="${x.id}"><span><img src="./Resources/greenbox.png" alt=""></span>
                 <h3> ${x.newTaskName} </h3> 
                 <p class="taskDescriptionText"> ${x.newAddDescription} </p>
-                <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+                <img class= "profileCard" src=${assignedToURL}> 
                 <hr> 
                 <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
       const newDiv = document.createElement("div");
@@ -313,7 +343,7 @@ function renderRetrievedTasks() {
       let card = `<div id="${x.id}"><span><img src="./Resources/yellowbox.png" alt=""></span>
                 <h3> ${x.newTaskName} </h3> 
                 <p class="taskDescriptionText"> ${x.newAddDescription} </p>
-                <img class= "profileCard" src="./Resources/ProfileUser1.png"> 
+                <img class= "profileCard" src=${assignedToURL}> 
                 <hr> 
                 <p class="dueDateText"><strong>DUE:</strong><span>${x.newDueDate}</span></p></div>`;
       const newDiv = document.createElement("div");
