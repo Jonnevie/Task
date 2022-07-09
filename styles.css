@@ -76,6 +76,8 @@ html {
 
 .addTaskBtn button:hover {
   cursor: pointer;
+  background-color: #3f689d;
+  color: white;
 }
 
 
@@ -135,7 +137,13 @@ html {
 .card1 {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   margin: 25px;
- 
+  border-radius: 5%;
+
+}
+
+.card1:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .card1 span {
@@ -229,6 +237,10 @@ margin: 5px 5px;
 
 #modalBtnDel:hover {
   cursor: pointer;
+  background-color: #cf4f55;
+  color: white;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
 
@@ -246,6 +258,10 @@ font-weight: bold;
 
 #modalEditBtnSubmit:hover {
   cursor: pointer;
+  background-color: #3f689d;
+  color: white;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
 #modalBtn {
@@ -273,6 +289,14 @@ margin-top: 20px;
   border-radius: 10%;
   font-weight: bold;
 
+}
+
+#modalBtnDone:hover {
+  cursor: pointer;
+  background-color: #7cb523;
+  color: white;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
 #modalBtn:hover {
