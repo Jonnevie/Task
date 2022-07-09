@@ -1,10 +1,12 @@
 import { TaskManager } from "./TaskManager.js";
 
 let latestID = 0;
+const firstObject = {id: 0, message: "This is just a placeholder"};
 
 window.addEventListener("load", () => {
+  localStorage.setItem(0,JSON.stringify(firstObject));
   populateArray();
-  if (localStorage.length > 0) {populateIDArray()};
+  populateIDArray();
   renderRetrievedTasks();
   form.addEventListener("submit", (e) => {
     // e.preventDefault();
