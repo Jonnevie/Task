@@ -281,11 +281,13 @@ function renderRetrievedTasks() {
     if (x.newAssignTo == "Jonnevie"){
    assignedToURL = "./Resources/ProfileUser4.png"
   } else if (x.newAssignTo == "Seb") {
-     assignedToURL = "./Resources/ProfileUser3.png"
+     assignedToURL = "https://ca.slack-edge.com/T03D1A9UA0H-U03E4V01JEM-114cbebd95cd-512"
   } else if (x.newAssignTo == "Betty") {
-     assignedToURL = "./Resources/ProfileUser2.png"
+     assignedToURL = "https://ca.slack-edge.com/T03D1A9UA0H-U03DULNBNLC-302a1f76a262-512"
   } else if (x.newAssignTo == "Pooja") {
-     assignedToURL = "./Resources/ProfileUser1.png"
+     assignedToURL = "https://ca.slack-edge.com/T03D1A9UA0H-U03DULNH4N8-g6931de90907-512"
+  } else if (x.newAssignTo =="Justin") {
+    assignedToURL = "https://ca.slack-edge.com/T03D1A9UA0H-U03CTQHF37X-307d1f8dc23f-512"
   } else {
     console.log('user doesnt exist')
   }
